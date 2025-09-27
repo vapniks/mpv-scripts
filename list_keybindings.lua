@@ -1,3 +1,6 @@
+-- list_keybindings.lua
+-- mpv script to list current keybindings
+
 local bindings = mp.get_property_native("input-bindings")
 
 for _, binding in ipairs(bindings) do

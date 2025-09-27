@@ -1,4 +1,9 @@
 -- toggle_frame_number.lua
+-- mpv script to toggle display of current frame and time position in the top left corner.
+-- It can either be called from the console like this: script-message toggle_frame_display
+-- Or you can bind it to a key by adding the following line to your input.conf file (without the initial --):
+-- <KEY> script-message toggle_frame_display
+-- where <KEY> should be replaced with the key you wish to bind
 
 local display_enabled = false -- Variable to track whether the display is enabled
 local timer = nil -- Timer variable to control periodic updates
