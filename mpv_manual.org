@@ -90,8 +90,7 @@ toggles the display of this list.
 - q :: Stop playing and quit.
 - Q :: Like =q=, but store the current playback position. Playing the
   same file later will resume at the old playback position if possible.
-  See [[#resuming-playback][RESUMING
-  PLAYBACK]].
+  See [[#resuming-playback][RESUMING PLAYBACK]].
 - / and * :: Decrease/increase volume.
 - KP_DIVIDE and KP_MULTIPLY :: Decrease/increase volume.
 - 9 and 0 :: Decrease/increase volume.
@@ -11017,8 +11016,7 @@ syntax" in a number of other places.
 =<argument> ::= (<unquoted> | " <double_quoted> " | ' <single_quoted> ' | `X <custom_quoted> X`)=
 
 =command_name= is an unquoted string with the command name itself. See
-[[#list-of-input-commands][List of Input
-Commands]] for a list.
+[[#list-of-input-commands][List of Input Commands]] for a list.
 
 Arguments are separated by whitespaces even if the command expects only
 one argument. Arguments with whitespaces or other special characters
@@ -16057,13 +16055,11 @@ The =mp= module is preloaded, although it can be loaded manually with
 
 - =mp.command(string)= :: Run the given command. This is similar to the
   commands used in input.conf. See
-  [[#list-of-input-commands][List of Input
-  Commands]].
+  [[#list-of-input-commands][List of Input Commands]].
 
   By default, this will show something on the OSD (depending on the
   command), as if it was used in =input.conf=. See
-  [[#input-command-prefixes][Input Command
-  Prefixes]] how to influence OSD usage per command.
+  [[#input-command-prefixes][Input Command Prefixes]] how to influence OSD usage per command.
 
   Returns =true= on success, or =nil, error= on error.
 
