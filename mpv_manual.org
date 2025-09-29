@@ -1,13 +1,10 @@
-[[https://mpv.io/][[[./mpv.io_files/mpv-logo-128-0baae5aa.png]] mpv //]]
+#+TITLE: mpv.io
 
 - [[https://mpv.io/installation][// Installation]]
 - [[https://mpv.io/manual][// Reference]]
 - [[https://mpv.io/bug-reports][// Bug Reports]]
 - [[https://mpv.io/community][// Community]]
 
-<<manual>>
-
-<<synopsis>>
 * SYNOPSIS
   :PROPERTIES:
   :CUSTOM_ID: synopsis
@@ -17,7 +14,6 @@
 
 *mpv* [options] files
 
-<<description>>
 * DESCRIPTION
   :PROPERTIES:
   :CUSTOM_ID: description
@@ -32,7 +28,6 @@ variety of different video and audio output methods are supported.
 Usage examples to get you started quickly can be found at the end of
 this man page.
 
-<<interactive-control>>
 * INTERACTIVE CONTROL
   :PROPERTIES:
   :CUSTOM_ID: interactive-control
@@ -49,16 +44,15 @@ The following listings are not necessarily complete. See
 User =input.conf= files and Lua scripts can define additional key
 bindings.
 
-See [[https://mpv.io/manual/stable/#command-interface][COMMAND
-INTERFACE]] and [[https://mpv.io/manual/stable/#key-names][Key names]]
+See [[#command-interface][COMMAND INTERFACE]] and [[#key-names][Key names]]
 sections for more details on configuring keybindings.
 
 See also =--input-test= for interactive binding details by key, and the
-[[https://mpv.io/manual/stable/#stats][stats]] built-in script for key
+[[#stats][stats]] built-in script for key
 bindings list (including print to terminal). By default, the ? key
 toggles the display of this list.
 
-<<keyboard-control>>
+
 ** Keyboard Control
    :PROPERTIES:
    :CUSTOM_ID: keyboard-control
@@ -96,7 +90,7 @@ toggles the display of this list.
 - q :: Stop playing and quit.
 - Q :: Like =q=, but store the current playback position. Playing the
   same file later will resume at the old playback position if possible.
-  See [[https://mpv.io/manual/stable/#resuming-playback][RESUMING
+  See [[#resuming-playback][RESUMING
   PLAYBACK]].
 - / and * :: Decrease/increase volume.
 - KP_DIVIDE and KP_MULTIPLY :: Decrease/increase volume.
@@ -158,14 +152,14 @@ toggles the display of this list.
   platforms that support the =clipboard= property.
 - i and I :: Show/toggle an overlay displaying statistics about the
   currently playing file such as codec, framerate, number of dropped
-  frames and so on. See [[https://mpv.io/manual/stable/#stats][STATS]]
+  frames and so on. See [[#stats][STATS]]
   for more information.
 
 - ? :: Toggle an overlay displaying the active key bindings. See
-  [[https://mpv.io/manual/stable/#stats][STATS]] for more information.
+  [[#stats][STATS]] for more information.
 - DEL :: Cycle OSC visibility between never / auto (mouse-move) / always
 - ` :: Show the console. (ESC closes it again. See
-  [[https://mpv.io/manual/stable/#console][CONSOLE]].)
+  [[#console][CONSOLE]].)
 
 (The following keys are valid only when using a video output that
 supports the corresponding adjustment.)
@@ -205,14 +199,13 @@ In track menus, selecting the current tracks disables it.
 - g-h :: Select a file from the watch history. Requires
   =--save-watch-history=.
 - g-w :: Select a file from watch later config files (see
-  [[https://mpv.io/manual/stable/#resuming-playback][RESUMING
-  PLAYBACK]]) to resume playing. Requires
+  [[#resuming-playback][RESUMING PLAYBACK]]) to resume playing. Requires
   =--write-filename-in-watch-later-config=.
 - g-b :: Select a defined input binding.
 - g-r :: Show the values of all properties.
 - g-m, MENU, Ctrl+p :: Show a menu with miscellaneous entries.
 
-See [[https://mpv.io/manual/stable/#select][SELECT]] for more
+See [[#select][SELECT]] for more
 information.
 
 (The following keys are valid if you have a keyboard with multimedia
@@ -226,7 +219,6 @@ keys.)
 If you miss some older key bindings, look at
 =etc/restore-old-bindings.conf= in the mpv git repository.
 
-<<mouse-control>>
 ** Mouse Control
    :PROPERTIES:
    :CUSTOM_ID: mouse-control
@@ -242,7 +234,6 @@ If you miss some older key bindings, look at
 - Ctrl+Wheel up/down :: Change video zoom keeping the part of the video
   hovered by the cursor under it.
 
-<<context-menu>>
 ** Context Menu
    :PROPERTIES:
    :CUSTOM_ID: context-menu
@@ -260,7 +251,6 @@ To use this feature, you need to fill the =menu-data= property with menu
 definition data, and add a keybinding to run the =context-menu= command,
 which can be done with a user script.
 
-<<usage>>
 * USAGE
   :PROPERTIES:
   :CUSTOM_ID: usage
@@ -283,7 +273,7 @@ is the same as =--no-fs=.
 If an option is marked as /(XXX only)/, it will only work in combination
 with the /XXX/ option or if /XXX/ is compiled in.
 
-<<legacy-option-syntax>>
+
 ** Legacy option syntax
    :PROPERTIES:
    :CUSTOM_ID: legacy-option-syntax
@@ -310,7 +300,6 @@ normal file to be played (as in =mpv f.txt=).
 The future plan is that =-option value= will not work anymore, and
 options with a single =-= behave the same as =--= options.
 
-<<escaping-spaces-and-other-special-characters>>
 ** Escaping spaces and other special characters
    :PROPERTIES:
    :CUSTOM_ID: escaping-spaces-and-other-special-characters
@@ -388,7 +377,6 @@ and can avoid the suboption parsing mess. For example, =--vf= supports
 =MPV_FORMAT_NODE=, which lets you pass suboptions as a nested data
 structure of maps and arrays.
 
-<<paths>>
 ** Paths
    :PROPERTIES:
    :CUSTOM_ID: paths
@@ -465,7 +453,6 @@ Be sure that your scripts can handle these "no config" scenarios.
 | =~~state/=       | The path to application state data (=~/.local/state/mpv/=). On some platforms, this will be the same as =~~home/=.                                          |
 | =~~old_home/=    | Do not use.                                                                                                                                                 |
 
-<<per-file-options>>
 ** Per-File Options
    :PROPERTIES:
    :CUSTOM_ID: per-file-options
@@ -508,7 +495,6 @@ current file stops playing. If option =--c= is changed during playback
 of =file2.mkv=, it is reset when advancing to =file3.mkv=. This only
 affects file-local options. The option =--a= is never reset here.
 
-<<list-options>>
 ** List Options
    :PROPERTIES:
    :CUSTOM_ID: list-options
@@ -520,7 +506,7 @@ list of tags, but the option also allows you to append a single tag with
 =--display-tags-append=, and the tag name can for example contain a
 literal =,= without the need for escaping.
 
-<<string-list-and-path-list-options>>
+
 *** String list and path list options
     :PROPERTIES:
     :CUSTOM_ID: string-list-and-path-list-options
@@ -547,7 +533,7 @@ They support the following operations:
 having to escape the argument (you may still need to escape on the shell
 level).
 
-<<key-value-list-options>>
+
 *** Key/value list options
     :PROPERTIES:
     :CUSTOM_ID: keyvalue-list-options
@@ -579,7 +565,7 @@ the JSON IPC, use an appropriate structured data type.
 
 Prior to mpv 0.33, =:= was also recognized as separator by =-set=.
 
-<<object-settings-list-options>>
+
 *** Object settings list options
     :PROPERTIES:
     :CUSTOM_ID: object-settings-list-options
@@ -587,7 +573,7 @@ Prior to mpv 0.33, =:= was also recognized as separator by =-set=.
 
 This is a very complex option type for some options, such as =--af= and
 =--vf=. They often require complicated escaping. See
-[[https://mpv.io/manual/stable/#video-filters][VIDEO FILTERS]] for
+[[#video-filters][VIDEO FILTERS]] for
 details.
 
 They support the following operations:
@@ -603,7 +589,7 @@ They support the following operations:
 | -toggle   | Append an item, or remove it if it already exists          |
 | -help     | Pseudo operation that prints a help text to the terminal   |
 
-<<general>>
+
 *** General
     :PROPERTIES:
     :CUSTOM_ID: general
@@ -626,13 +612,12 @@ parameter.
 
 An object settings list can hold up to 100 elements.
 
-<<configuration-files>>
 * CONFIGURATION FILES
   :PROPERTIES:
   :CUSTOM_ID: configuration-files
   :END:
 
-<<location-and-syntax>>
+
 ** Location and Syntax
    :PROPERTIES:
    :CUSTOM_ID: location-and-syntax
@@ -644,7 +629,7 @@ in your configuration directory (e.g. =/etc/mpv= or
 =/usr/local/etc/mpv=), the user-specific one is
 =~/.config/mpv/mpv.conf=. For details and platform specifics (in
 particular Windows paths) see the
-[[https://mpv.io/manual/stable/#files][FILES]] section.
+[[#files][FILES]] section.
 
 User-specific options override system-wide options and options given on
 the command line override both. The syntax of the configuration files is
@@ -664,7 +649,6 @@ Example configuration file
     osd-playing-msg=File: ${filename}
 #+END_EXAMPLE
 
-<<escaping-special-characters>>
 ** Escaping special characters
    :PROPERTIES:
    :CUSTOM_ID: escaping-special-characters
@@ -680,7 +664,6 @@ not involved here, so option values only need to be quoted to escape =#=
 anywhere in the value, ="=, ='= or =%= at the beginning of the value,
 and leading and trailing whitespace.
 
-<<putting-command-line-options-into-the-configuration-file>>
 ** Putting Command Line Options into the Configuration File
    :PROPERTIES:
    :CUSTOM_ID: putting-command-line-options-into-the-configuration-file
@@ -696,7 +679,6 @@ Here is a small guide:
 | =--opt=val=           | =opt=val=                  |
 | =-opt "has spaces"=   | =opt=has spaces=           |
 
-<<file-specific-configuration-files>>
 ** File-specific Configuration Files
    :PROPERTIES:
    :CUSTOM_ID: file-specific-configuration-files
@@ -715,7 +697,6 @@ directory-specific configuration files. For this, mpv first tries to
 load a mpv.conf from the same directory as the file played and then
 tries to load any file-specific configuration.
 
-<<profiles>>
 ** Profiles
    :PROPERTIES:
    :CUSTOM_ID: profiles
@@ -762,7 +743,6 @@ Example mpv config file with profiles
     profile=fast
 #+END_EXAMPLE
 
-<<runtime-profiles>>
 ** Runtime profiles
    :PROPERTIES:
    :CUSTOM_ID: runtime-profiles
@@ -833,7 +813,6 @@ Then running these commands will result in behavior as commented:
     # vf == vflip
 #+END_EXAMPLE
 
-<<conditional-auto-profiles>>
 ** Conditional auto profiles
    :PROPERTIES:
    :CUSTOM_ID: conditional-auto-profiles
@@ -981,7 +960,6 @@ Warning
 This feature is subject to change indefinitely. You might be forced to
 adjust your profiles on mpv updates.
 
-<<legacy-auto-profiles>>
 ** Legacy auto profiles
    :PROPERTIES:
    :CUSTOM_ID: legacy-auto-profiles
@@ -1006,7 +984,6 @@ the currently played file (/not/ the file format).
 This feature is very limited, and is considered soft-deprecated. Use
 conditional auto profiles.
 
-<<using-mpv-from-other-programs-or-scripts>>
 * Using mpv from other programs or scripts
   :PROPERTIES:
   :CUSTOM_ID: using-mpv-from-other-programs-or-scripts
@@ -1026,7 +1003,7 @@ There are three choices for using mpv from other programs or scripts:
      mpv's stdin. If you need interactive control, using
      =--input-ipc-server= or =--input-ipc-client= is recommended. This
      gives you access to the
-     [[https://mpv.io/manual/stable/#json-ipc][JSON IPC]] over unix
+     [[#json-ipc][JSON IPC]] over unix
      domain sockets (or named pipes on Windows).
 
      Depending on what you do, passing =--no-config= or =--config-dir=
@@ -1047,13 +1024,12 @@ There are three choices for using mpv from other programs or scripts:
      parsing is unavailable).
 
      See
-     [[https://mpv.io/manual/stable/#embedding-into-other-programs-libmpv][EMBEDDING
-     INTO OTHER PROGRAMS (LIBMPV)]].
+     [[#embedding-into-other-programs-libmpv][EMBEDDING INTO OTHER PROGRAMS (LIBMPV)]].
 
   3. As a user script
-     ([[https://mpv.io/manual/stable/#lua-scripting][LUA SCRIPTING]],
-     [[https://mpv.io/manual/stable/#javascript][JAVASCRIPT]],
-     [[https://mpv.io/manual/stable/#c-plugins][C PLUGINS]]). This is
+     ([[#lua-scripting][LUA SCRIPTING]],
+     [[#javascript][JAVASCRIPT]],
+     [[#c-plugins][C PLUGINS]]). This is
      recommended when the goal is to "enhance" the CLI player. Scripts
      get access to the entire client API of mpv.
 
@@ -1064,13 +1040,11 @@ There are three choices for using mpv from other programs or scripts:
 
 All these access the client API, which is the sum of the various
 mechanisms provided by the player core, as documented here:
-[[https://mpv.io/manual/stable/#options][OPTIONS]],
-[[https://mpv.io/manual/stable/#list-of-input-commands][List of Input
-Commands]], [[https://mpv.io/manual/stable/#properties][Properties]],
-[[https://mpv.io/manual/stable/#list-of-events][List of events]] (also
-see C API), [[https://mpv.io/manual/stable/#hooks][Hooks]].
+[[#options][OPTIONS]],
+[[#list-of-input-commands][List of Input Commands]], [[#properties][Properties]],
+[[#list-of-events][List of events]] (also
+see C API), [[#hooks][Hooks]].
 
-<<taking-screenshots>>
 * TAKING SCREENSHOTS
   :PROPERTIES:
   :CUSTOM_ID: taking-screenshots
@@ -1081,7 +1055,7 @@ Screenshots of the currently played file can be taken using the
 key. Files named =mpv-shotNNNN.jpg= will be saved in the working
 directory, using the first available number - no files will be
 overwritten. In pseudo-GUI mode, the screenshot will be saved somewhere
-else. See [[https://mpv.io/manual/stable/#pseudo-gui-mode][PSEUDO GUI
+else. See [[#pseudo-gui-mode][PSEUDO GUI
 MODE]].
 
 A screenshot will usually contain the unscaled video contents at the end
@@ -1091,7 +1065,6 @@ screenshots without subtitles, while =s= includes subtitles.
 Unlike with MPlayer, the =screenshot= video filter is not required. This
 filter was never required in mpv, and has been removed.
 
-<<terminal-status-line>>
 * TERMINAL STATUS LINE
   :PROPERTIES:
   :CUSTOM_ID: terminal-status-line
@@ -1153,7 +1126,6 @@ are also listed.
   buffered amount in kilobytes. (=demuxer-cache-duration= and
   =demuxer-cache-state= properties.)
 
-<<low-latency-playback>>
 * LOW LATENCY PLAYBACK
   :PROPERTIES:
   :CUSTOM_ID: low-latency-playback
@@ -1198,7 +1170,6 @@ Additional options that can be tried:
 - without audio =--framedrop=no --speed=1.01= may help for live sources
   (results can be mixed)
 
-<<resuming-playback>>
 * RESUMING PLAYBACK
   :PROPERTIES:
   :CUSTOM_ID: resuming-playback
@@ -1231,9 +1202,8 @@ of a show, and later play all the episodes, mpv will automatically
 resume playback from episode 5.
 
 More options to configure this functionality are listed in
-[[https://mpv.io/manual/stable/#watch-later][Watch Later]].
+[[#watch-later][Watch Later]].
 
-<<protocols>>
 * PROTOCOLS
   :PROPERTIES:
   :CUSTOM_ID: protocols
@@ -1483,14 +1453,13 @@ More options to configure this functionality are listed in
   Like =memory://=, but the string is interpreted as hexdump.
 #+END_QUOTE
 
-<<pseudo-gui-mode>>
 * PSEUDO GUI MODE
   :PROPERTIES:
   :CUSTOM_ID: pseudo-gui-mode
   :END:
 
 mpv has no official GUI, other than the OSC
-([[https://mpv.io/manual/stable/#on-screen-controller][ON SCREEN
+([[#on-screen-controller][ON SCREEN
 CONTROLLER]]), which is not a full GUI and is not meant to be. However,
 to compensate for the lack of expected GUI behavior, mpv will in some
 cases start with some settings changed to behave slightly more like a
@@ -1539,13 +1508,12 @@ the normal way. This is deprecated. In future mpv releases, the behavior
 might change, and not apply your additional settings, and/or use a
 different profile name.
 
-<<options>>
 * OPTIONS
   :PROPERTIES:
   :CUSTOM_ID: options
   :END:
 
-<<track-selection>>
+
 ** Track Selection
    :PROPERTIES:
    :CUSTOM_ID: track-selection
@@ -1559,7 +1527,7 @@ different profile name.
   over one that matches fewer. See also =--aid=.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Examples
@@ -1573,7 +1541,7 @@ different profile name.
   =--alang=, for subtitle tracks.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Examples
@@ -1590,7 +1558,7 @@ different profile name.
   tracks.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--aid=<ID|auto|no>= :: Select audio track. =auto= selects the
@@ -1714,7 +1682,6 @@ different profile name.
   non-forced track. Conversely, no will never select a forced subtitle
   track.
 
-<<playback-control>>
 ** Playback Control
    :PROPERTIES:
    :CUSTOM_ID: playback-control
@@ -2266,7 +2233,6 @@ different profile name.
 
   Setting this to a high value may lead to quadratic runtime behavior.
 
-<<program-behavior>>
 ** Program Behavior
    :PROPERTIES:
    :CUSTOM_ID: program-behavior
@@ -2343,7 +2309,7 @@ different profile name.
   separating them with the path separator (=:= on Unix, =;= on Windows).
 
   =--scripts= is a path list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--script-opt=<key=value>=,
@@ -2355,8 +2321,7 @@ different profile name.
   Each use of the =--script-opt= option will add another option to the
   internal list, while =--script-opts= takes a list of options at once,
   and overwrites the internal list with it. The latter is a key/value
-  list option. See [[https://mpv.io/manual/stable/#list-options][List
-  Options]] for details.
+  list option. See [[#list-options][List Options]] for details.
 
 - =--merge-files= :: Pretend that all files passed to mpv are
   concatenated into a single, big file. This uses timeline/EDL support
@@ -2379,7 +2344,7 @@ different profile name.
   The special name =all= resets as many options as possible.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Examples
@@ -2395,8 +2360,7 @@ different profile name.
   profile. Lists all profiles if no parameter is provided.
 - =--use-filedir-conf= :: Look for a file-specific configuration file in
   the same directory as the file that is being played. See
-  [[https://mpv.io/manual/stable/#file-specific-configuration-files][File-specific
-  Configuration Files]].
+  [[#file-specific-configuration-files][File-specific Configuration Files]].
 
   Warning
 
@@ -2555,7 +2519,7 @@ different profile name.
   in FFmpeg.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Example
@@ -2579,8 +2543,7 @@ different profile name.
   activate this by default.
 - =--load-auto-profiles=<yes|no|auto>= :: Enable the builtin script that
   does auto profiles (default: auto). See
-  [[https://mpv.io/manual/stable/#conditional-auto-profiles][Conditional
-  auto profiles]] for details. =auto= will load the script, but
+  [[#conditional-auto-profiles][Conditional auto profiles]] for details. =auto= will load the script, but
   immediately unload it if there are no conditional profiles.
 - =--load-select=<yes|no>= :: Enable the builtin script that lets you
   select from lists of items (default: yes). By default, its keybindings
@@ -2591,10 +2554,9 @@ different profile name.
   GUI mode", which means that the defaults for some options are changed.
   This option should not normally be used directly, but only by mpv
   internally, or mpv-provided scripts, config files, or .desktop files.
-  See [[https://mpv.io/manual/stable/#pseudo-gui-mode][PSEUDO GUI MODE]]
+  See [[#pseudo-gui-mode][PSEUDO GUI MODE]]
   for details.
 
-<<watch-later>>
 ** Watch Later
    :PROPERTIES:
    :CUSTOM_ID: watch-later
@@ -2611,8 +2573,7 @@ different profile name.
   This behavior is disabled by default, but is always available when
   quitting the player with Shift+Q.
 
-  See [[https://mpv.io/manual/stable/#resuming-playback][RESUMING
-  PLAYBACK]].
+  See [[#resuming-playback][RESUMING PLAYBACK]].
 
 - =--watch-later-dir=<path>= :: The directory in which to store the
   "watch later" temporary files.
@@ -2645,7 +2606,7 @@ different profile name.
   are restored by default.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Examples
@@ -2670,7 +2631,6 @@ different profile name.
 - =--ignore-path-in-watch-later-config= :: Ignore path (i.e. use
   filename only) when using watch later feature. (Default: disabled)
 
-<<watch-history>>
 ** Watch History
    :PROPERTIES:
    :CUSTOM_ID: watch-history
@@ -2686,22 +2646,20 @@ different profile name.
 
 - =--watch-history-path=<path>= :: The path in which to store the watch
   history. Default: =~~state/watch_history.jsonl= (see
-  [[https://mpv.io/manual/stable/#paths][PATHS]]).
+  [[#paths][PATHS]]).
 
   This file contains one JSON object per line. Its =time= field is the
   UNIX timestamp when the file was opened, its =path= field is the
   normalized path, and its =title= field is the title when it was
   available.
 
-<<video>>
 ** Video
    :PROPERTIES:
    :CUSTOM_ID: video
    :END:
 
 - =--vo=<driver>= :: Specify the video output backend to be used. See
-  [[https://mpv.io/manual/stable/#video-output-drivers][VIDEO OUTPUT
-  DRIVERS]] for details and descriptions of available drivers.
+  [[#video-output-drivers][VIDEO OUTPUT DRIVERS]] for details and descriptions of available drivers.
 - =--vd=<...>= :: Specify a priority list of video decoders to be used,
   according to their family and name. See =--ad= for further details.
   Both of these options use the same syntax and semantics; the only
@@ -2713,7 +2671,7 @@ different profile name.
 
 - =--vf=<filter1[=parameter1:parameter2:...],filter2,...>= :: Specify a
   list of video filters to apply to the video stream. See
-  [[https://mpv.io/manual/stable/#video-filters][VIDEO FILTERS]] for
+  [[#video-filters][VIDEO FILTERS]] for
   details and descriptions of the available filters. The option variants
   =--vf-add=, =--vf-pre=, and =--vf-clr= exist to modify a previously
   specified list, but you should not need these for typical use.
@@ -2814,7 +2772,7 @@ different profile name.
   complex content (eg: 4K60 AV1) may require it.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Note
@@ -3286,7 +3244,7 @@ different profile name.
   =st=), =skip_bottom= (was =sb=), =debug=.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Example
@@ -3354,7 +3312,6 @@ different profile name.
   setting of 1 means that the VO will wait for every frame to become
   visible before starting to render the next frame. (Default: 3)
 
-<<audio>>
 ** Audio
    :PROPERTIES:
    :CUSTOM_ID: audio
@@ -3430,11 +3387,10 @@ different profile name.
   =audio-device-list= properties to make high-level decisions about how
   to continue.
 - =--ao=<driver>= :: Specify the audio output drivers to be used. See
-  [[https://mpv.io/manual/stable/#audio-output-drivers][AUDIO OUTPUT
-  DRIVERS]] for details and descriptions of available drivers.
+  [[#audio-output-drivers][AUDIO OUTPUT DRIVERS]] for details and descriptions of available drivers.
 - =--af=<filter1[=parameter1:parameter2:...],filter2,...>= :: Specify a
   list of audio filters to apply to the audio stream. See
-  [[https://mpv.io/manual/stable/#audio-filters][AUDIO FILTERS]] for
+  [[#audio-filters][AUDIO FILTERS]] for
   details and descriptions of the available filters. The option variants
   =--af-add=, =--af-pre=, and =--af-clr= exist to modify a previously
   specified list, but you should not need these for typical use.
@@ -3547,7 +3503,7 @@ different profile name.
   AVOptions can be found in the FFmpeg manual.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--ad-spdif-dtshd=<yes|no>=, =--dtshd=<yes|no>= :: If DTS is passed
@@ -3639,7 +3595,7 @@ different profile name.
   viewing a video.
 
   This is a path list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--audio-file=<file>= :: CLI/config file only alias for
@@ -3694,14 +3650,14 @@ different profile name.
   =--directory-filter-types=.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details. Use =--help=audio-exts= to see default extensions.
 
 - =--audio-file-paths=<path1:path2:...>= :: Equivalent to
   =--sub-file-paths= option, but for auto-loaded audio files.
 
   This is a path list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--audio-client-name=<name>= :: The application name the player
@@ -3747,7 +3703,6 @@ different profile name.
   If =--audio-stream-silence=yes= is not set, this option will likely
   just waste time.
 
-<<subtitles>>
 ** Subtitles
    :PROPERTIES:
    :CUSTOM_ID: subtitles
@@ -3770,7 +3725,7 @@ intentionally, but overriding them can be controlled with
   list of AVOptions can be found in the FFmpeg manual.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--sub-delay=<sec>= :: Delays primary subtitles by =<sec>= seconds.
@@ -3791,7 +3746,7 @@ intentionally, but overriding them can be controlled with
   streams.)
 
   =--sub-files= is a path list option (see
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details), and can take multiple file names separated by =:= (Unix) or
   =;= (Windows), while =--sub-file= takes a single filename, but can be
   used multiple times to add multiple files. Technically, =--sub-file=
@@ -3900,7 +3855,7 @@ intentionally, but overriding them can be controlled with
   some style or script info parameters.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Examples
@@ -4122,7 +4077,7 @@ intentionally, but overriding them can be controlled with
   affect what mpv recognizes as subtitles when using drag and drop.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--sub-codepage=<codepage>= :: You can use this option to specify the
@@ -4218,7 +4173,7 @@ intentionally, but overriding them can be controlled with
   - the =sub= configuration subdirectory (usually =~/.config/mpv/sub/=)
 
   This is a path list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--sub-visibility=<yes|no>= :: Can be used to disable display of
@@ -4446,7 +4401,7 @@ intentionally, but overriding them can be controlled with
 - =--sub-filter-regex-...=...= :: Set a list of regular expressions to
   match on text subtitles, and remove any lines that match (default:
   empty). This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details. Normally, you should use =--sub-filter-regex-append=<regex>=,
   where each option use will append a new regular expression, without
   having to fight escaping problems.
@@ -4522,12 +4477,11 @@ intentionally, but overriding them can be controlled with
   mpv/libass for subtitles. Useful if you do not want to install fonts
   to your system. Note that files in this directory are loaded into
   memory before being used by mpv. If you have a lot of fonts, consider
-  using fonts.conf (see [[https://mpv.io/manual/stable/#files][FILES]]
+  using fonts.conf (see [[#files][FILES]]
   section) to include additional mpv user settings.
 
   If this option is not specified, =~~/fonts= will be used by default.
 
-<<window>>
 ** Window
    :PROPERTIES:
    :CUSTOM_ID: window
@@ -4537,8 +4491,7 @@ intentionally, but overriding them can be controlled with
   window, and if possible, also sets the audio stream title.
 
   Properties are expanded. (See
-  [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]].)
+  [[#property-expansion][Property Expansion]].)
 
   Warning
 
@@ -5016,7 +4969,6 @@ intentionally, but overriding them can be controlled with
 - =--x11-wid-title=<yes|no>= :: Whether or not to set the window title
   when mpv is embedded on X11 (default: =no=).
 
-<<disc-devices>>
 ** Disc Devices
    :PROPERTIES:
    :CUSTOM_ID: disc-devices
@@ -5024,13 +4976,13 @@ intentionally, but overriding them can be controlled with
 
 - =--cdda-device=<path>= :: Specify the CD device for CDDA playback. The
   default device path depends on the OS. See the
-  [[https://mpv.io/manual/stable/#optical-drives][OPTICAL DRIVES]]
+  [[#optical-drives][OPTICAL DRIVES]]
   section.
 - =--dvd-device=<path>= :: Specify the DVD device or .iso filename. You
   can also specify a directory that contains files previously copied
   directly from a DVD (with e.g. vobcopy). The default device path
   depends on the OS. See the
-  [[https://mpv.io/manual/stable/#optical-drives][OPTICAL DRIVES]]
+  [[#optical-drives][OPTICAL DRIVES]]
   section.
 
   Example
@@ -5040,7 +4992,7 @@ intentionally, but overriding them can be controlled with
 - =--bluray-device=<path>= :: Specify the Blu-ray disc location. Must be
   a directory with Blu-ray structure. The default device path depends on
   the OS. See the
-  [[https://mpv.io/manual/stable/#optical-drives][OPTICAL DRIVES]]
+  [[#optical-drives][OPTICAL DRIVES]]
   section.
 
   Example
@@ -5083,7 +5035,6 @@ intentionally, but overriding them can be controlled with
   multiple angles. This option tells mpv which angle to use (default:
   1).
 
-<<equalizer>>
 ** Equalizer
    :PROPERTIES:
    :CUSTOM_ID: equalizer
@@ -5102,7 +5053,6 @@ intentionally, but overriding them can be controlled with
   You can get a colored negative of the image with this option. Not
   supported by all video output drivers.
 
-<<demuxer>>
 ** Demuxer
    :PROPERTIES:
    :CUSTOM_ID: demuxer
@@ -5155,7 +5105,7 @@ intentionally, but overriding them can be controlled with
   with mpv options.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Example
@@ -5507,7 +5457,7 @@ intentionally, but overriding them can be controlled with
   =video,audio,image,archive,playlist=)
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--autocreate-playlist=<no|filter|same>= :: When opening a local file,
@@ -5518,7 +5468,6 @@ intentionally, but overriding them can be controlled with
   | filter:   | Create a playlist from the parent directory with files matching =--directory-filter-types=.                                                                                                                                                                                                                                                    |
   | same:     | Create a playlist from the parent directory with files matching the same category as the currently loaded file. One of the =*-exts= is selected based on the input file and only files with matching extensions are added to the playlist. If the input file itself is not matched to any extension list, the playlist is not autogenerated.   |
 
-<<input>>
 ** Input
    :PROPERTIES:
    :CUSTOM_ID: input
@@ -5571,7 +5520,7 @@ intentionally, but overriding them can be controlled with
   also run as soon as possible.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Example
@@ -5594,7 +5543,7 @@ intentionally, but overriding them can be controlled with
   Has to be used with a dummy video, and the normal ways to quit the
   player will not work (key bindings that normally quit will be shown on
   OSD only, just like any other binding). See
-  [[https://mpv.io/manual/stable/#input-conf][INPUT.CONF]].
+  [[#input-conf][INPUT.CONF]].
 - =--input-terminal=<yes|no>= :: =--input-terminal=no= prevents the
   player from reading key events from standard input. Useful when
   reading data from standard input. This is automatically enabled when
@@ -5613,7 +5562,7 @@ intentionally, but overriding them can be controlled with
   =--input-ipc-server=\\.\pipe\tmp\mpv-socket= are equivalent for IPC on
   Windows.
 
-  See [[https://mpv.io/manual/stable/#json-ipc][JSON IPC]] for details.
+  See [[#json-ipc][JSON IPC]] for details.
 
 - =--input-ipc-client=fd://<N>= :: Connect a single IPC client to the
   given FD. This is somewhat similar to =--input-ipc-server=, except no
@@ -5740,7 +5689,6 @@ intentionally, but overriding them can be controlled with
   The builtin console and input selector enable IME for the duration of
   accepting text input.
 
-<<osd>>
 ** OSD
    :PROPERTIES:
    :CUSTOM_ID: osd
@@ -5779,8 +5727,7 @@ intentionally, but overriding them can be controlled with
   level 1 (visible by default). The message will be visible by default,
   and as long as no other message covers it, and the OSD level isn't
   changed (see =--osd-level=). Expands properties; see
-  [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]].
+  [[#property-expansion][Property Expansion]].
 - =--osd-msg2=<string>= :: Similar to =--osd-msg1=, but for OSD level 2.
   If this is an empty string (default), then the playback time is shown.
 - =--osd-msg3=<string>= :: Similar to =--osd-msg1=, but for OSD level 3.
@@ -5800,8 +5747,7 @@ intentionally, but overriding them can be controlled with
   default mapped to =P=), and when seeking if enabled with
   =--osd-on-seek= or =osd-= prefixes in input.conf (see
   =Input Command Prefixes=). Expands properties. See
-  [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]].
+  [[#property-expansion][Property Expansion]].
 
   This option has been replaced with =--osd-msg3=. The only difference
   is that this option implicitly includes =${osd-sym-cc}=. This option
@@ -5812,8 +5758,7 @@ intentionally, but overriding them can be controlled with
   =--osd-playing-msg='file: ${filename}'= will show the message =file:=
   followed by a space and the currently played filename.
 
-  See [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]].
+  See [[#property-expansion][Property Expansion]].
 
 - =--osd-playing-msg-duration=<time>= :: Set the duration of
   =osd-playing-msg= in ms. If this is unset, =osd-playing-msg= stays on
@@ -5959,7 +5904,6 @@ intentionally, but overriding them can be controlled with
 - =--osd-fonts-dir=<path>= :: See =--sub-fonts-dir= for details.
   Defaults to =~~/fonts=.
 
-<<screenshot>>
 ** Screenshot
    :PROPERTIES:
    :CUSTOM_ID: screenshot
@@ -6076,7 +6020,7 @@ intentionally, but overriding them can be controlled with
 
   This option is not set by default, and thus will write screenshots to
   the directory from which mpv was started. In pseudo-gui mode (see
-  [[https://mpv.io/manual/stable/#pseudo-gui-mode][PSEUDO GUI MODE]]),
+  [[#pseudo-gui-mode][PSEUDO GUI MODE]]),
   this is set to the desktop.
 
 - =--screenshot-jpeg-quality=<0-100>= :: Set the JPEG quality level.
@@ -6129,7 +6073,7 @@ intentionally, but overriding them can be controlled with
   encoders.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Example
@@ -6154,7 +6098,6 @@ intentionally, but overriding them can be controlled with
   in software which may not accurately reflect the actual visible
   result.
 
-<<software-scaler>>
 ** Software Scaler
    :PROPERTIES:
    :CUSTOM_ID: software-scaler
@@ -6246,7 +6189,6 @@ intentionally, but overriding them can be controlled with
   performance, but reduce quality (default: yes). Currently, this may
   simplify gamma conversion operations.
 
-<<audio-resampler>>
 ** Audio Resampler
    :PROPERTIES:
    :CUSTOM_ID: audio-resampler
@@ -6287,10 +6229,9 @@ places).
   AVAudioResampleContext. These should be documented by FFmpeg.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
-<<terminal>>
 ** Terminal
    :PROPERTIES:
    :CUSTOM_ID: terminal
@@ -6331,8 +6272,7 @@ places).
   Some messages are printed before the command line is parsed and are
   therefore not affected by =--msg-level=. To control these messages,
   you have to use the =MPV_VERBOSE= environment variable; see
-  [[https://mpv.io/manual/stable/#environment-variables][ENVIRONMENT
-  VARIABLES]] for details.
+  [[#environment-variables][ENVIRONMENT VARIABLES]] for details.
 
   Available levels:
 
@@ -6388,13 +6328,11 @@ places).
   =--term-playing-msg='file: ${filename}'= will print the string =file:=
   followed by a space and the currently played filename.
 
-  See [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]].
+  See [[#property-expansion][Property Expansion]].
 
 - =--term-status-msg=<string>= :: Print out a custom string during
   playback instead of the standard status line. Expands properties. See
-  [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]].
+  [[#property-expansion][Property Expansion]].
 - =--term-title=<string>= :: Set the terminal title. Currently, this
   simply concatenates the escape sequence setting the window title with
   the provided (property expanded) string. This will mess up if the
@@ -6403,8 +6341,7 @@ places).
   includes the regrettable win32.
 
   Expands properties. See
-  [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]].
+  [[#property-expansion][Property Expansion]].
 
 - =--msg-module= :: Prepend module name to each console message.
 - =--msg-time= :: Prepend timing information to each console message.
@@ -6412,7 +6349,6 @@ places).
   (technically, slightly later actually), using a monotonic time source
   depending on the OS. This is =CLOCK_MONOTONIC= on sane UNIX variants.
 
-<<cache>>
 ** Cache
    :PROPERTIES:
    :CUSTOM_ID: cache
@@ -6595,7 +6531,6 @@ places).
 
   See =--list-options= for defaults and value range.
 
-<<network>>
 ** Network
    :PROPERTIES:
    :CUSTOM_ID: network
@@ -6611,7 +6546,7 @@ places).
   accessing HTTP stream.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Example
@@ -6684,7 +6619,6 @@ places).
   The bitrate as used is sent by the server, and there's no guarantee
   it's actually meaningful.
 
-<<dvb>>
 ** DVB
    :PROPERTIES:
    :CUSTOM_ID: dvb
@@ -6736,7 +6670,6 @@ places).
   =H cycle dvbin-channel-switch-offset up=,
   =K cycle dvbin-channel-switch-offset down=
 
-<<gpu-renderer-options>>
 ** GPU renderer options
    :PROPERTIES:
    :CUSTOM_ID: gpu-renderer-options
@@ -7298,8 +7231,7 @@ them.
   Each use of the =--glsl-shader= option will add another file to the
   internal list of shaders, while =--glsl-shaders= takes a list of
   files, and overwrites the internal list with it. The latter is a path
-  list option (see [[https://mpv.io/manual/stable/#list-options][List
-  Options]] for details).
+  list option (see [[#list-options][List Options]] for details).
 
   Warning
 
@@ -7798,7 +7730,7 @@ them.
     layer (experimental)
 
   This is an object settings list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--gpu-api=<type1,type2,...[,]>= :: Specify a priority list of
@@ -7814,7 +7746,7 @@ them.
   - d3d11 :: Allow only =--gpu-context=d3d11=
 
   This is an object settings list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--opengl-es=<mode>= :: Controls which type of OpenGL context will be
@@ -8346,7 +8278,6 @@ them.
 
   [[https://libplacebo.org/options/]]
 
-<<video-sync>>
 ** Video Sync
    :PROPERTIES:
    :CUSTOM_ID: video-sync
@@ -8473,7 +8404,6 @@ them.
   "overshooting" and skipping multiple video frames before the sync
   logic can react.
 
-<<miscellaneous>>
 ** Miscellaneous
    :PROPERTIES:
    :CUSTOM_ID: miscellaneous
@@ -8489,7 +8419,7 @@ them.
   =--list-options= to see it.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--mf-fps=<value>= :: Framerate used when decoding from multiple PNG
@@ -8509,7 +8439,7 @@ them.
   too noisy.)
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--backdrop-type=<auto|none|mica|acrylic|mica-alt>= :: (Windows only)
@@ -8556,7 +8486,7 @@ them.
   was not quite strictly enforced.)
 
   This is a path list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--external-file=<file>= :: CLI/config file only alias for
@@ -8577,7 +8507,7 @@ them.
   implementation details.)
 
   This is a path list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--cover-art-file=<file>= :: CLI/config file only alias for
@@ -8603,7 +8533,7 @@ them.
   =--directory-filter-types=.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details. Use =--help=image-exts= to see default extensions.
 
 - =--cover-art-whitelist=filename1,filename2,...= :: Filenames to load
@@ -8615,14 +8545,14 @@ them.
   =AlbumArt,Album,cover,front,AlbumArtSmall,Folder,.folder,thumb=
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--video-exts=ext1,ext2,...= :: Video file extensions to try to match
   when using =--autocreate-playlist= or =--directory-filter-types=.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details. Use =--help=video-exts= to see default extensions.
 
 - =--archive-exts=ext1,ext2,...= :: Archive file extensions to try to
@@ -8630,7 +8560,7 @@ them.
   =--directory-filter-types=.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details. Use =--help=archive-exts= to see the default extensions.
 
 - =--playlist-exts=ext1,ext2,...= :: Playlist file extensions to try to
@@ -8638,7 +8568,7 @@ them.
   =--directory-filter-types=.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details. Use =--help=playlist-exts= to see the default extensions.
 
 - =--autoload-files=<yes|no>= :: Automatically load/select external
@@ -8770,7 +8700,7 @@ them.
     protocol, or if the =wayland= backend is disabled.
 
   This is an object settings list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 - =--clipboard-monitor=<yes|no>= :: (Windows, Wayland and macOS only)
@@ -8785,7 +8715,6 @@ them.
   not for the =vo= backend. See =current-clipboard-backend= property for
   more details.
 
-<<audio-output-drivers>>
 * AUDIO OUTPUT DRIVERS
   :PROPERTIES:
   :CUSTOM_ID: audio-output-drivers
@@ -8801,7 +8730,7 @@ If the list has a trailing ',', mpv will fall back on drivers not
 contained in the list.
 
 This is an object settings list option. See
-[[https://mpv.io/manual/stable/#list-options][List Options]] for
+[[#list-options][List Options]] for
 details.
 
 Note
@@ -8862,8 +8791,7 @@ Available audio output drivers are:
   whether a certain channel layout is actually supported.
 
   You can also try
-  [[https://github.com/mpv-player/mpv/wiki/ALSA-Surround-Sound-and-Upmixing][using
-  the upmix plugin]]. This setup enables multichannel audio on the
+  [[https://github.com/mpv-player/mpv/wiki/ALSA-Surround-Sound-and-Upmixing][using the upmix plugin]]. This setup enables multichannel audio on the
   =default= device with automatic upmixing with shared access, so
   playing stereo and multichannel audio at the same time will work as
   expected.
@@ -9067,7 +8995,6 @@ Available audio output drivers are:
     stream resets under the default setting. In such cases, specifying a
     shorter duration might help.
 
-<<video-output-drivers>>
 * VIDEO OUTPUT DRIVERS
   :PROPERTIES:
   :CUSTOM_ID: video-output-drivers
@@ -9083,7 +9010,7 @@ If the list has a trailing =,=, mpv will fall back on drivers not
 contained in the list.
 
 This is an object settings list option. See
-[[https://mpv.io/manual/stable/#list-options][List Options]] for
+[[#list-options][List Options]] for
 details.
 
 Note
@@ -9105,7 +9032,7 @@ Available video output drivers are:
   driver. It supports extended scaling methods, dithering, color
   management, custom shaders, HDR, and more.
 
-  See [[https://mpv.io/manual/stable/#gpu-renderer-options][GPU renderer
+  See [[#gpu-renderer-options][GPU renderer
   options]] for options specific to this VO.
 
   By default, mpv utilizes settings that balance quality and
@@ -9134,8 +9061,7 @@ Available video output drivers are:
 
 - =gpu-next= :: Experimental video renderer based on =libplacebo=. This
   supports almost the same set of features as =--vo=gpu=. See
-  [[https://mpv.io/manual/stable/#gpu-renderer-options][GPU renderer
-  options]] for a list.
+  [[#gpu-renderer-options][GPU renderer options]] for a list.
 
   Should generally be faster and higher quality, but some features may
   still be missing or misbehave. Expect (and report!) bugs. See here for
@@ -9749,7 +9675,6 @@ Available video output drivers are:
 
   This is a fallback only, and should not be normally used.
 
-<<audio-filters>>
 * AUDIO FILTERS
   :PROPERTIES:
   :CUSTOM_ID: audio-filters
@@ -9759,11 +9684,11 @@ Audio filters allow you to modify the audio stream and its properties.
 The syntax is:
 
 - =--af=...= :: Setup a chain of audio filters. See =--vf=
-  ([[https://mpv.io/manual/stable/#video-filters][VIDEO FILTERS]]) for
+  ([[#video-filters][VIDEO FILTERS]]) for
   the full syntax.
 
   This is an object settings list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
 Note
@@ -9986,7 +9911,6 @@ Available filters are:
   not use this filter (or the given option); they are extremely low
   quality.
 
-<<video-filters>>
 * VIDEO FILTERS
   :PROPERTIES:
   :CUSTOM_ID: video-filters
@@ -10015,7 +9939,7 @@ The exact syntax is:
   explanations and examples.
 
   This is an object settings list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   The general filter entry syntax is:
@@ -10056,7 +9980,7 @@ used. Use =--lavfi-complex= for such a use case. This also applies for
 
 Filters can be manipulated at run time. You can use =@= labels as
 described above in combination with the =vf= command (see
-[[https://mpv.io/manual/stable/#command-interface][COMMAND INTERFACE]])
+[[#command-interface][COMMAND INTERFACE]])
 to get more control over this. Initially disabled filters with =!= are
 useful for this as well.
 
@@ -10786,7 +10710,6 @@ Available mpv-only filters are:
   most =--vo=gpu= options are unconditionally applied to the =gpu=
   filter. There is no mechanism in mpv to prevent this.
 
-<<encoding>>
 * ENCODING
   :PROPERTIES:
   :CUSTOM_ID: encoding
@@ -10804,7 +10727,7 @@ facility.
   libavformat. See =--ofopts=help= for a full list of supported options.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   - =--ofopts-add=<option>= :: Appends the option given as an argument
@@ -10823,7 +10746,7 @@ facility.
     encoding.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   - =--oacopts-add=<option>= :: Appends the option given as an argument
@@ -10844,7 +10767,7 @@ facility.
     for H.264 encoding.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   - =--ovcopts-add=<option>= :: Appends the option given as an argument
@@ -10864,7 +10787,7 @@ facility.
   arbitrary keys, while support in MP4 and MP3 is more limited.
 
   This is a key/value list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Example
@@ -10877,7 +10800,7 @@ facility.
   file.
 
   This is a string list option. See
-  [[https://mpv.io/manual/stable/#list-options][List Options]] for
+  [[#list-options][List Options]] for
   details.
 
   Example
@@ -10885,7 +10808,6 @@ facility.
   - "=--oremove-metadata=comment,genre=" :: excludes copying of the the
     comment and genre tags to the output file.
 
-<<command-interface>>
 * COMMAND INTERFACE
   :PROPERTIES:
   :CUSTOM_ID: command-interface
@@ -10896,7 +10818,7 @@ ways to interact with the player use them: key bindings (=input.conf=),
 OSD (showing information with properties), JSON IPC, the client API
 (=libmpv=), and the classic slave mode.
 
-<<input-conf>>
+
 ** input.conf
    :PROPERTIES:
    :CUSTOM_ID: input.conf
@@ -10945,9 +10867,8 @@ commands:
 (Only closing the window will make *mpv* exit, pressing normal keys will
 merely display the binding, even if mapped to quit.)
 
-Also see [[https://mpv.io/manual/stable/#key-names][Key names]].
+Also see [[#key-names][Key names]].
 
-<<input-conf-syntax>>
 ** input.conf syntax
    :PROPERTIES:
    :CUSTOM_ID: input.conf-syntax
@@ -10991,7 +10912,6 @@ Intermediate keys can be remapped to =ignore= in order to avoid this
 issue. The maximum number of (non-modifier) keys for combinations is
 currently 4.
 
-<<key-names>>
 ** Key names
    :PROPERTIES:
    :CUSTOM_ID: key-names
@@ -11082,7 +11002,6 @@ Comments on some symbolic names:
   (You should probably avoid this if possible, because it might change
   behavior or get removed in the future.)
 
-<<flat-command-syntax>>
 ** Flat command syntax
    :PROPERTIES:
    :CUSTOM_ID: flat-command-syntax
@@ -11098,7 +11017,7 @@ syntax" in a number of other places.
 =<argument> ::= (<unquoted> | " <double_quoted> " | ' <single_quoted> ' | `X <custom_quoted> X`)=
 
 =command_name= is an unquoted string with the command name itself. See
-[[https://mpv.io/manual/stable/#list-of-input-commands][List of Input
+[[#list-of-input-commands][List of Input
 Commands]] for a list.
 
 Arguments are separated by whitespaces even if the command expects only
@@ -11127,12 +11046,9 @@ stages. First, arguments are determined as described above, and then,
 where applicable, properties are expanded - regardless of argument
 quoting. However, expansion can still be prevented with the =raw= prefix
 or =$>=. See
-[[https://mpv.io/manual/stable/#input-command-prefixes][Input Command
-Prefixes]] and
-[[https://mpv.io/manual/stable/#property-expansion][Property
-Expansion]].
+[[#input-command-prefixes][Input Command Prefixes]] and
+[[#property-expansion][Property Expansion]].
 
-<<commands-specified-as-arrays>>
 ** Commands specified as arrays
    :PROPERTIES:
    :CUSTOM_ID: commands-specified-as-arrays
@@ -11144,8 +11060,7 @@ This applies to certain APIs, such as =mp.commandv()= or
 the C libmpv client API.
 
 The command as well as all arguments are passed as a single array.
-Similar to the [[https://mpv.io/manual/stable/#flat-command-syntax][Flat
-command syntax]], you can first pass prefixes as strings (each as
+Similar to the [[#flat-command-syntax][Flat command syntax]], you can first pass prefixes as strings (each as
 separate array item), then the command name as string, and then each
 argument as string or a native value.
 
@@ -11159,8 +11074,7 @@ parsers, or can sidestep them by the ability to pass non-string values.
 
 Property expansion is disabled by default for these APIs. This can be
 changed with the =expand-properties= prefix. See
-[[https://mpv.io/manual/stable/#input-command-prefixes][Input Command
-Prefixes]].
+[[#input-command-prefixes][Input Command Prefixes]].
 
 Sometimes commands have string arguments, that in turn are actually
 parsed by other components (e.g. filter strings with =vf add=) - in
@@ -11168,11 +11082,10 @@ these cases, you you would have to double-escape in input.conf, but not
 with the array APIs.
 
 For complex commands, consider using
-[[https://mpv.io/manual/stable/#named-arguments][Named arguments]]
+[[#named-arguments][Named arguments]]
 instead, which should give slightly more compatibility. Some commands do
 not support named arguments and inherently take an array, though.
 
-<<named-arguments>>
 ** Named arguments
    :PROPERTIES:
    :CUSTOM_ID: named-arguments
@@ -11184,8 +11097,7 @@ MPV_FORMAT_NODE_MAP) in the C libmpv client API.
 
 The name of the command is provided with a =name= string field. The name
 of each command is defined in each command description in the
-[[https://mpv.io/manual/stable/#list-of-input-commands][List of Input
-Commands]]. =--input-cmdlist= also lists them. See the =subprocess=
+[[#list-of-input-commands][List of Input Commands]]. =--input-cmdlist= also lists them. See the =subprocess=
 command for an example.
 
 Some commands do not support named arguments (e.g. =run= command). You
@@ -11196,10 +11108,8 @@ means you cannot use them for key bindings in input.conf at all.
 
 Property expansion is disabled by default for these APIs. This can be
 changed with the =expand-properties= prefix. See
-[[https://mpv.io/manual/stable/#input-command-prefixes][Input Command
-Prefixes]].
+[[#input-command-prefixes][Input Command Prefixes]].
 
-<<list-of-input-commands>>
 ** List of Input Commands
    :PROPERTIES:
    :CUSTOM_ID: list-of-input-commands
@@ -11211,10 +11121,9 @@ in =[= / =]=. If you don't pass them, they will be set to a default
 value.
 
 Remember to quote string arguments in input.conf (see
-[[https://mpv.io/manual/stable/#flat-command-syntax][Flat command
-syntax]]).
+[[#flat-command-syntax][Flat command syntax]]).
 
-<<playback-control-1>>
+
 *** Playback Control
     :PROPERTIES:
     :CUSTOM_ID: playback-control-1
@@ -11246,8 +11155,7 @@ syntax]]).
 
   This is a scalable command. See the documentation of =nonscalable=
   input command prefix in
-  [[https://mpv.io/manual/stable/#input-command-prefixes][Input Command
-  Prefixes]] for details.
+  [[#input-command-prefixes][Input Command Prefixes]] for details.
 
 - =revert-seek [<flags>]= :: Undoes the =seek= command, and some other
   commands that seek (but not necessarily all of them). Calling this
@@ -11285,7 +11193,7 @@ syntax]]).
   For embedded subtitles (like with Matroska), this works only with
   subtitle events that have already been displayed, or are within a
   short prefetch range. See
-  [[https://mpv.io/manual/stable/#cache][Cache]] for details on how to
+  [[#cache][Cache]] for details on how to
   control the available prefetch range.
 
 - =frame-step [<frames>] [<flags>]= :: Go forward or backwards by a
@@ -11335,7 +11243,7 @@ syntax]]).
 
   - keep-playlist :: Do not clear the playlist.
 
-<<property-manipulation>>
+
 *** Property Manipulation
     :PROPERTIES:
     :CUSTOM_ID: property-manipulation
@@ -11356,8 +11264,7 @@ syntax]]).
 
   This is a scalable command. See the documentation of =nonscalable=
   input command prefix in
-  [[https://mpv.io/manual/stable/#input-command-prefixes][Input Command
-  Prefixes]] for details.
+  [[#input-command-prefixes][Input Command Prefixes]] for details.
 
 - =multiply <name> <value>= :: Similar to =add=, but multiplies the
   property or option with the numeric value.
@@ -11373,8 +11280,7 @@ syntax]]).
 
   This is a scalable command. See the documentation of =nonscalable=
   input command prefix in
-  [[https://mpv.io/manual/stable/#input-command-prefixes][Input Command
-  Prefixes]] for details.
+  [[#input-command-prefixes][Input Command Prefixes]] for details.
 
 - =cycle-values [<"!reverse">] <property> <value1> [<value2> [...]]= :: Cycle
   through a list of values. Each invocation of the command will set the
@@ -11394,7 +11300,7 @@ syntax]]).
 
 - =change-list <name> <operation> <value>= :: This command changes list
   options as described in
-  [[https://mpv.io/manual/stable/#list-options][List Options]]. The
+  [[#list-options][List Options]]. The
   =<name>= parameter is the normal option name, while =<operation>= is
   the suffix or action used on the option.
 
@@ -11409,7 +11315,7 @@ syntax]]).
   is =--glsl-shaders-append=file.glsl= or alternatively
   =--glsl-shader=file.glsl=.
 
-<<playlist-manipulation>>
+
 *** Playlist Manipulation
     :PROPERTIES:
     :CUSTOM_ID: playlist-manipulation
@@ -11499,7 +11405,7 @@ syntax]]).
   =MPV_FORMAT_NODE_MAP= (or a Lua table), however the values themselves
   must be strings currently. These options are set during playback, and
   restored to the previous value at end of playback (see
-  [[https://mpv.io/manual/stable/#per-file-options][Per-File Options]]).
+  [[#per-file-options][Per-File Options]]).
 
   Warning
 
@@ -11562,7 +11468,7 @@ syntax]]).
   new recursive playlists have been opened since a =playlist-shuffle=
   command.
 
-<<track-manipulation>>
+
 *** Track Manipulation
     :PROPERTIES:
     :CUSTOM_ID: track-manipulation
@@ -11669,7 +11575,7 @@ syntax]]).
     improved on request.)
   - <keep-selection> :: Do not change current track selections.
 
-<<text-manipulation>>
+
 *** Text Manipulation
     :PROPERTIES:
     :CUSTOM_ID: text-manipulation
@@ -11677,13 +11583,11 @@ syntax]]).
 
 - =print-text <text>= :: Print text to stdout. The string can contain
   properties (see
-  [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]]). Take care to put the argument in quotes.
+  [[#property-expansion][Property Expansion]]). Take care to put the argument in quotes.
 - =expand-text <text>= :: Property-expand the argument and return the
   expanded string. This can be used only through the client API or from
   a script using =mp.command_native=. (see
-  [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]]).
+  [[#property-expansion][Property Expansion]]).
 - =expand-path <text>= :: Expand a path's double-tilde placeholders into
   a platform-specific path. As =expand-text=, this can only be used
   through the client API or from a script using =mp.command_native=.
@@ -11722,7 +11626,7 @@ syntax]]).
 
   This line of Lua prints "foo \{bar}" on the OSD.
 
-<<configuration-commands>>
+
 *** Configuration Commands
     :PROPERTIES:
     :CUSTOM_ID: configuration-commands
@@ -11739,7 +11643,7 @@ syntax]]).
     command for this profile. Only works if the profile has
     =profile-restore= set to a relevant mode. Prints a warning if
     nothing could be done. See
-    [[https://mpv.io/manual/stable/#runtime-profiles][Runtime profiles]]
+    [[#runtime-profiles][Runtime profiles]]
     for details.
 
 - =load-config-file <filename>= :: Load a configuration file, similar to
@@ -11754,7 +11658,7 @@ syntax]]).
   would be written by =quit-watch-later= or =write-watch-later-config=
   in the current circumstance.
 
-<<osd-commands>>
+
 *** OSD Commands
     :PROPERTIES:
     :CUSTOM_ID: osd-commands
@@ -11762,8 +11666,7 @@ syntax]]).
 
 - =show-text <text> [<duration>|-1 [<level>]]= :: Show text on the OSD.
   The string can contain properties, which are expanded as described in
-  [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]]. This can be used to show playback time, filename, and so
+  [[#property-expansion][Property Expansion]]. This can be used to show playback time, filename, and so
   on. =no-osd= has no effect on this command.
 
   - <duration> :: The time in ms to show the message for. By default, it
@@ -11787,7 +11690,7 @@ syntax]]).
 
   This has the following named arguments. The order of them is not
   guaranteed, so you should always call them with named arguments, see
-  [[https://mpv.io/manual/stable/#named-arguments][Named arguments]].
+  [[#named-arguments][Named arguments]].
 
   =id= is an integer between 0 and 63 identifying the overlay element.
   The ID can be used to add multiple overlay parts, update a part by
@@ -11950,7 +11853,7 @@ syntax]]).
   use the =mp.create_osd_overlay()= helper instead of invoking this
   command directly.
 
-<<input-and-keybind-commands>>
+
 *** Input and Keybind Commands
     :PROPERTIES:
     :CUSTOM_ID: input-and-keybind-commands
@@ -12053,7 +11956,7 @@ syntax]]).
   similar to the =--input-conf= option. If the file was already
   included, its previous bindings are not reset before it is reparsed.
 
-<<execution-commands>>
+
 *** Execution Commands
     :PROPERTIES:
     :CUSTOM_ID: execution-commands
@@ -12064,8 +11967,7 @@ syntax]]).
   older), this doesn't call the shell. Instead, the command is run
   directly, with each argument passed separately. Each argument is
   expanded like in
-  [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]].
+  [[#property-expansion][Property Expansion]].
 
   This command has a variable number of arguments, and cannot be used
   with named arguments.
@@ -12094,7 +11996,7 @@ syntax]]).
 
   This has the following named arguments. The order of them is not
   guaranteed, so you should always call them with named arguments, see
-  [[https://mpv.io/manual/stable/#named-arguments][Named arguments]].
+  [[#named-arguments][Named arguments]].
 
   - =args= (=MPV_FORMAT_NODE_ARRAY[MPV_FORMAT_STRING]=) :: Array of
     strings with the command as first argument, and subsequent command
@@ -12185,8 +12087,7 @@ syntax]]).
   queried from the result value.
 
   This command can be asynchronously aborted via API. Also see
-  [[https://mpv.io/manual/stable/#asynchronous-command-details][Asynchronous
-  command details]]. Only the =run= command can start processes in a
+  [[#asynchronous-command-details][Asynchronous command details]]. Only the =run= command can start processes in a
   truly detached way.
 
   Note
@@ -12222,10 +12123,9 @@ syntax]]).
 - =quit-watch-later [<code>]= :: Exit player, and store current playback
   position. Playing that file later will seek to the previous position
   on start. The (optional) argument is exactly as in the =quit= command.
-  See [[https://mpv.io/manual/stable/#resuming-playback][RESUMING
-  PLAYBACK]].
+  See [[#resuming-playback][RESUMING PLAYBACK]].
 
-<<scripting-commands>>
+
 *** Scripting Commands
     :PROPERTIES:
     :CUSTOM_ID: scripting-commands
@@ -12300,8 +12200,7 @@ syntax]]).
 
   This is a scalable command. See the documentation of =nonscalable=
   input command prefix in
-  [[https://mpv.io/manual/stable/#input-command-prefixes][Input Command
-  Prefixes]] for details.
+  [[#input-command-prefixes][Input Command Prefixes]] for details.
 
 - =load-script <filename>= :: Load a script, similar to the =--script=
   option. Whether this waits for the script to finish initialization or
@@ -12311,7 +12210,7 @@ syntax]]).
   return value of the =mpv_client_id()= API call of the newly created
   script handle.
 
-<<screenshot-commands>>
+
 *** Screenshot Commands
     :PROPERTIES:
     :CUSTOM_ID: screenshot-commands
@@ -12359,8 +12258,7 @@ syntax]]).
 
   Like all input command parameters, the filename is subject to property
   expansion as described in
-  [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]].
+  [[#property-expansion][Property Expansion]].
 
 - =screenshot-raw [<flags> [<format>]]= :: Return a screenshot in
   memory. This can be used only through the client API. The
@@ -12397,7 +12295,7 @@ syntax]]).
   The =flags= argument is like the first argument to =screenshot= and
   supports =subtitles=, =video=, =window=.
 
-<<filter-commands>>
+
 *** Filter Commands
     :PROPERTIES:
     :CUSTOM_ID: filter-commands
@@ -12408,7 +12306,7 @@ syntax]]).
 - =vf <operation> <value>= :: Change video filter chain.
 
   The semantics are exactly the same as with option parsing (see
-  [[https://mpv.io/manual/stable/#video-filters][VIDEO FILTERS]]). As
+  [[#video-filters][VIDEO FILTERS]]). As
   such the text below is a redundant and incomplete summary.
 
   The first argument decides what happens:
@@ -12484,7 +12382,7 @@ syntax]]).
 - =af-command <label> <command> <argument> [<target>]= :: Same as
   =vf-command=, but for audio filters.
 
-<<miscellaneous-commands>>
+
 *** Miscellaneous Commands
     :PROPERTIES:
     :CUSTOM_ID: miscellaneous-commands
@@ -12532,8 +12430,7 @@ syntax]]).
   finish until playback is stopped, an error happens, another
   =dump-cache= command is run, or an API like =mp.abort_async_command=
   was called to explicitly stop the command. See
-  [[https://mpv.io/manual/stable/#synchronous-vs-asynchronous][Synchronous
-  vs. Asynchronous]].
+  [[#synchronous-vs-asynchronous][Synchronous vs. Asynchronous]].
 
   Note
 
@@ -12580,12 +12477,11 @@ syntax]]).
   example, on Windows and macOS only the left mouse button can begin
   window dragging, while X11 and Wayland allow other mouse buttons.
 - =context-menu= :: Show context menu on the video window. See
-  [[https://mpv.io/manual/stable/#context-menu][Context Menu]] section
+  [[#context-menu][Context Menu]] section
   for details.
 
 Undocumented commands: =ao-reload= (experimental/internal).
 
-<<list-of-events>>
 ** List of events
    :PROPERTIES:
    :CUSTOM_ID: list-of-events
@@ -12678,8 +12574,7 @@ brackets:
   after seek or after file was loaded.
 - =shutdown= (=MPV_EVENT_SHUTDOWN=) :: Sent when the player quits, and
   the script should terminate. Normally handled automatically. See
-  [[https://mpv.io/manual/stable/#details-on-the-script-initialization-and-lifecycle][Details
-  on the script initialization and lifecycle]].
+  [[#details-on-the-script-initialization-and-lifecycle][Details on the script initialization and lifecycle]].
 - =log-message= (=MPV_EVENT_LOG_MESSAGE=) :: Receives messages enabled
   with =mpv_request_log_messages()= (Lua: =mp.enable_messages=).
 
@@ -12740,7 +12635,6 @@ brackets:
 The following events also happen, but are deprecated: =idle=, =tick= Use
 =mpv_observe_property()= (Lua: =mp.observe_property()=) instead.
 
-<<hooks>>
 ** Hooks
    :PROPERTIES:
    :CUSTOM_ID: hooks
@@ -12814,7 +12708,6 @@ The following hooks are currently defined:
 - =on_after_end_file= :: Run after an =end-file= event. Useful to drain
   property changes after a file has finished.
 
-<<input-command-prefixes>>
 ** Input Command Prefixes
    :PROPERTIES:
    :CUSTOM_ID: input-command-prefixes
@@ -12838,8 +12731,7 @@ Multiple prefixes can be specified. They are separated by whitespace.
   ="${property-name}"=.) This is the default for some
   libmpv/scripting/IPC APIs.
 - =expand-properties= :: All string arguments are expanded as described
-  in [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]]. This is the default for =input.conf= commands.
+  in [[#property-expansion][Property Expansion]]. This is the default for =input.conf= commands.
 - =repeatable= :: For some commands, keeping a key pressed doesn't run
   the command repeatedly. This prefix forces enabling key repeat in any
   case. For a list of commands: the first command determines the
@@ -12861,8 +12753,7 @@ Multiple prefixes can be specified. They are separated by whitespace.
   semantics of this flag might change in the future. Set it only if you
   don't rely on the effects of this command being fully realized when it
   returns. See
-  [[https://mpv.io/manual/stable/#synchronous-vs-asynchronous][Synchronous
-  vs. Asynchronous]].
+  [[#synchronous-vs-asynchronous][Synchronous vs. Asynchronous]].
 - =sync= :: Allow synchronous execution (if possible). Normally, all
   commands are synchronous by default, but some are asynchronous by
   default for compatibility with older behavior.
@@ -12870,7 +12761,6 @@ Multiple prefixes can be specified. They are separated by whitespace.
 All of the osd prefixes are still overridden by the global =--osd-level=
 settings.
 
-<<synchronous-vs-asynchronous>>
 ** Synchronous vs. Asynchronous
    :PROPERTIES:
    :CUSTOM_ID: synchronous-vs.-asynchronous
@@ -12912,7 +12802,6 @@ with sync vs. async: sub-add, audio-add, sub-reload, audio-reload,
 rescan-external-files, screenshot, screenshot-to-file, dump-cache,
 ab-loop-dump-cache.
 
-<<asynchronous-command-details>>
 ** Asynchronous command details
    :PROPERTIES:
    :CUSTOM_ID: asynchronous-command-details
@@ -12934,7 +12823,6 @@ on its own (like a forced =mpv_abort_async_command()= call for each
 pending command on behalf of the API user). This happens at the same
 time =MPV_EVENT_SHUTDOWN= is sent, and there is no way to prevent this.
 
-<<input-sections>>
 ** Input Sections
    :PROPERTIES:
    :CUSTOM_ID: input-sections
@@ -12953,7 +12841,6 @@ Predefined bindings:
 - =encode= :: Section which is active in encoding mode. It is enabled
   exclusively, so that bindings in the =default= sections are ignored.
 
-<<properties>>
 ** Properties
    :PROPERTIES:
    :CUSTOM_ID: properties
@@ -12963,18 +12850,15 @@ Properties are used to set mpv options during runtime, or to query
 arbitrary information. They can be manipulated with the
 =set=/=add=/=cycle= commands, and retrieved with =show-text=, or
 anything else that uses property expansion. (See
-[[https://mpv.io/manual/stable/#property-expansion][Property
-Expansion]].)
+[[#property-expansion][Property Expansion]].)
 
 If an option is referenced, the property will normally take/return
 exactly the same values as the option. In these cases, properties are
 merely a way to change an option at runtime.
 
 Note that many properties are unavailable at startup. See
-[[https://mpv.io/manual/stable/#details-on-the-script-initialization-and-lifecycle][Details
-on the script initialization and lifecycle]].
+[[#details-on-the-script-initialization-and-lifecycle][Details on the script initialization and lifecycle]].
 
-<<property-list>>
 ** Property list
    :PROPERTIES:
    :CUSTOM_ID: property-list
@@ -12984,7 +12868,7 @@ Note
 
 Most options can be set at runtime via properties as well. Just remove
 the leading =--= from the option name. These are not documented below,
-see [[https://mpv.io/manual/stable/#options][OPTIONS]] instead. Only
+see [[#options][OPTIONS]] instead. Only
 properties which do not exist as option with the same name, or which
 have very different behavior from the options are documented below.
 
@@ -14179,8 +14063,7 @@ read-only.
 
   Note that you need to escape the =\= character, because the string is
   processed for C escape sequences before passing it to the OSD code.
-  See [[https://mpv.io/manual/stable/#flat-command-syntax][Flat command
-  syntax]] for details.
+  See [[#flat-command-syntax][Flat command syntax]] for details.
 
   A list of tags can be found here:
   [[https://aegisub.org/docs/latest/ass_tags/]]
@@ -14361,7 +14244,7 @@ read-only.
   - =user-data/mpv/console/open= :: Whether the console is open.
 
 - =menu-data= (RW) :: This property stores the raw menu definition. See
-  [[https://mpv.io/manual/stable/#context-menu][Context Menu]] section
+  [[#context-menu][Context Menu]] section
   for details.
 
   - =type= :: Menu item type. Can be: =separator=, =submenu=, or empty.
@@ -14437,7 +14320,7 @@ read-only.
   This can be used to check for support for a specific format or use
   with =--demuxer-lavf-format=.
 - =input-key-list= :: List of
-  [[https://mpv.io/manual/stable/#key-names][Key names]], same as output
+  [[#key-names][Key names]], same as output
   by =--input-keylist=.
 - =mpv-version= :: The mpv version/copyright string. Depending on how
   the binary was built, it might contain either a release version, or
@@ -14585,7 +14468,6 @@ read-only.
   list of available backends.
 - =clock= :: The current local time in hour:minutes format.
 
-<<inconsistencies-between-options-and-properties>>
 ** Inconsistencies between options and properties
    :PROPERTIES:
    :CUSTOM_ID: inconsistencies-between-options-and-properties
@@ -14627,7 +14509,6 @@ caveats with some properties (due to historical reasons):
   =apply-profile= command, and the =mpv_load_config_file= API function.
   Avoid these properties.
 
-<<property-expansion>>
 ** Property Expansion
    :PROPERTIES:
    :CUSTOM_ID: property-expansion
@@ -14645,15 +14526,12 @@ Example for input.conf
   current file when pressing the =i= key
 
 Whether property expansion is enabled by default depends on which API is
-used (see [[https://mpv.io/manual/stable/#flat-command-syntax][Flat
-command syntax]],
-[[https://mpv.io/manual/stable/#commands-specified-as-arrays][Commands
-specified as arrays]] and
-[[https://mpv.io/manual/stable/#named-arguments][Named arguments]]), but
+used (see [[#flat-command-syntax][Flat command syntax]],
+[[#commands-specified-as-arrays][Commands specified as arrays]] and
+[[#named-arguments][Named arguments]]), but
 it can always be enabled with the =expand-properties= prefix or disabled
 with the =raw= prefix, as described in
-[[https://mpv.io/manual/stable/#input-command-prefixes][Input Command
-Prefixes]].
+[[#input-command-prefixes][Input Command Prefixes]].
 
 The following expansions are supported:
 
@@ -14694,7 +14572,6 @@ accepted as well. Example:
   - =\\= expands to =\=
 #+END_QUOTE
 
-<<raw-and-formatted-properties>>
 ** Raw and Formatted Properties
    :PROPERTIES:
    :CUSTOM_ID: raw-and-formatted-properties
@@ -14726,7 +14603,6 @@ have more information, like higher precision than seconds with
 title and language in the formatted case, but only the track number if
 it is raw.
 
-<<on-screen-controller>>
 * ON SCREEN CONTROLLER
   :PROPERTIES:
   :CUSTOM_ID: on-screen-controller
@@ -14740,7 +14616,7 @@ seeking.
 The OSC is enabled by default if mpv was compiled with Lua support. It
 can be disabled entirely using the =--osc=no= option.
 
-<<using-the-osc>>
+
 ** Using the OSC
    :PROPERTIES:
    :CUSTOM_ID: using-the-osc
@@ -14750,7 +14626,7 @@ By default, the OSC will show up whenever the mouse is moved inside the
 player window and will hide if the mouse is not moved outside the OSC
 for 0.5 seconds or if the mouse leaves the window.
 
-<<the-interface>>
+
 *** The Interface
     :PROPERTIES:
     :CUSTOM_ID: the-interface
@@ -14849,7 +14725,7 @@ mouse actions on some interface elements, and the default behaviors of
 several elements were changed. If you miss some older behaviors, look at
 =etc/restore-osc-bindings.conf= in the mpv git repository.
 
-<<key-bindings>>
+
 *** Key Bindings
     :PROPERTIES:
     :CUSTOM_ID: key-bindings
@@ -14858,12 +14734,11 @@ several elements were changed. If you miss some older behaviors, look at
 These key bindings are active by default if nothing else is already
 bound to these keys. In case of collision, the function needs to be
 bound to a different key. See the
-[[https://mpv.io/manual/stable/#script-commands][Script Commands]]
+[[#script-commands][Script Commands]]
 section.
 
 | del   | Cycles visibility between never / auto (mouse-move) / always   |
 
-<<configuration>>
 ** Configuration
    :PROPERTIES:
    :CUSTOM_ID: configuration
@@ -14873,10 +14748,9 @@ This script can be customized through a config file
 =script-opts/osc.conf= placed in mpv's user directory and through the
 =--script-opts= command-line option. The configuration syntax is
 described in
-[[https://mpv.io/manual/stable/#mp-options-functions][mp.options
-functions]].
+[[#mp-options-functions][mp.options functions]].
 
-<<command-line-syntax>>
+
 *** Command-line Syntax
     :PROPERTIES:
     :CUSTOM_ID: command-line-syntax
@@ -14891,7 +14765,7 @@ Example:
     --script-opts=osc-optionA=value1,osc-optionB=value2
 #+END_EXAMPLE
 
-<<configurable-options>>
+
 *** Configurable Options
     :PROPERTIES:
     :CUSTOM_ID: configurable-options
@@ -15281,7 +15155,7 @@ are clicked. =mbtn_mid= commands are also triggered with
 
 =fullscreen_mbtn_right_command="cycle window-maximized"=
 
-<<custom-buttons>>
+
 *** Custom Buttons
     :PROPERTIES:
     :CUSTOM_ID: custom-buttons
@@ -15304,7 +15178,7 @@ custom_button_3_mbtn_right_command=set speed 1
 custom_button_3_wheel_up_command=add speed 0.25
 custom_button_3_wheel_down_command=add speed -0.25
 
-<<script-commands>>
+
 *** Script Commands
     :PROPERTIES:
     :CUSTOM_ID: script-commands
@@ -15336,7 +15210,6 @@ and to set auto mode (the default) with =b=:
   no. If a second argument is passed (any value), then the output on the
   OSD will be silenced.
 
-<<stats>>
 * STATS
   :PROPERTIES:
   :CUSTOM_ID: stats
@@ -15347,7 +15220,7 @@ currently played file. It is enabled by default if mpv was compiled with
 Lua support. It can be disabled entirely using the
 =--load-stats-overlay=no= option.
 
-<<usage-1>>
+
 ** Usage
    :PROPERTIES:
    :CUSTOM_ID: usage-1
@@ -15384,7 +15257,6 @@ On page 4, these key bindings are also active:
 
 | /   | Search key bindings   |
 
-<<configuration-1>>
 ** Configuration
    :PROPERTIES:
    :CUSTOM_ID: configuration-1
@@ -15394,10 +15266,9 @@ This script can be customized through a config file
 =script-opts/stats.conf= placed in mpv's user directory and through the
 =--script-opts= command-line option. The configuration syntax is
 described in
-[[https://mpv.io/manual/stable/#mp-options-functions][mp.options
-functions]].
+[[#mp-options-functions][mp.options functions]].
 
-<<configurable-options-1>>
+
 *** Configurable Options
     :PROPERTIES:
     :CUSTOM_ID: configurable-options-1
@@ -15537,7 +15408,7 @@ functions]].
 Note: colors are given as hexadecimal values and use ASS tag order:
 BBGGRR (blue green red).
 
-<<different-key-bindings>>
+
 *** Different key bindings
     :PROPERTIES:
     :CUSTOM_ID: different-key-bindings
@@ -15557,7 +15428,7 @@ And to display a certain page directly:
     h script-binding stats/display-page-4-toggle
 #+END_EXAMPLE
 
-<<active-key-bindings-page>>
+
 *** Active key bindings page
     :PROPERTIES:
     :CUSTOM_ID: active-key-bindings-page
@@ -15580,7 +15451,7 @@ adding =-= before =yes=, i.e. =--script-opt=stats-bindlist=-yes=.
 Like with =--input-test=, the list includes bindings from =input.conf=
 and from user scripts. Use =--no-config= to list only built-in bindings.
 
-<<internal-stuff-page>>
+
 *** Internal stuff page
     :PROPERTIES:
     :CUSTOM_ID: internal-stuff-page
@@ -15624,7 +15495,6 @@ If entries have =/time= and =/cpu= variants, the former gives the real
 time (monotonic clock), while the latter the thread CPU time (only if
 the corresponding pthread API works and is supported).
 
-<<console>>
 * CONSOLE
   :PROPERTIES:
   :CUSTOM_ID: console
@@ -15638,7 +15508,7 @@ the video window and the terminal. It can be disabled entirely using the
 Console can either process free-form text or select from a predefined
 list of items.
 
-<<free-form-text-mode-keybindings>>
+
 ** Free-form text mode keybindings
    :PROPERTIES:
    :CUSTOM_ID: free-form-text-mode-keybindings
@@ -15673,7 +15543,7 @@ list of items.
 - PGUP :: Go to the first command in the history.
 - PGDN :: Stop navigating the command history.
 - Ctrl+r :: Search the command history. See
-  [[https://mpv.io/manual/stable/#select][SELECT]] for the key bindings
+  [[#select][SELECT]] for the key bindings
   in this mode.
 - INSERT :: Toggle insert mode.
 - Ctrl+v :: Paste text (uses the clipboard on X11 and Wayland).
@@ -15687,7 +15557,6 @@ list of items.
 - WHEEL_UP :: Move back in the command history.
 - WHEEL_DOWN :: Move forward in the command history.
 
-<<known-issues>>
 ** Known issues
    :PROPERTIES:
    :CUSTOM_ID: known-issues
@@ -15697,7 +15566,6 @@ list of items.
 - The cursor keys move between Unicode code-points, not grapheme
   clusters
 
-<<configuration-2>>
 ** Configuration
    :PROPERTIES:
    :CUSTOM_ID: configuration-2
@@ -15707,10 +15575,9 @@ This script can be customized through a config file
 =script-opts/console.conf= placed in mpv's user directory and through
 the =--script-opts= command-line option. The configuration syntax is
 described in
-[[https://mpv.io/manual/stable/#mp-options-functions][mp.options
-functions]].
+[[#mp-options-functions][mp.options functions]].
 
-<<configurable-options-2>>
+
 *** Configurable Options
     :PROPERTIES:
     :CUSTOM_ID: configurable-options-2
@@ -15792,7 +15659,6 @@ functions]].
   completions. Values in the range 1.8..2.5 make sense for common
   monospace fonts.
 
-<<commands>>
 * COMMANDS
   :PROPERTIES:
   :CUSTOM_ID: commands
@@ -15801,7 +15667,7 @@ functions]].
 This script allows running and completing input commands in the console
 interactively, and also adds mpv's log to the console's log.
 
-<<keybindings>>
+
 ** Keybindings
    :PROPERTIES:
    :CUSTOM_ID: keybindings
@@ -15809,7 +15675,6 @@ interactively, and also adds mpv's log to the console's log.
 
 - ` :: Open the console to enter commands.
 
-<<commands-1>>
 ** Commands
    :PROPERTIES:
    :CUSTOM_ID: commands-1
@@ -15833,7 +15698,6 @@ interactively, and also adds mpv's log to the console's log.
   - =Ctrl+o script-message-to console type "loadfile ''" 11= :: Enter a
     file or URL to play, with autocompletion of paths in the filesystem.
 
-<<configuration-3>>
 ** Configuration
    :PROPERTIES:
    :CUSTOM_ID: configuration-3
@@ -15843,10 +15707,10 @@ This script can be customized through a config file
 =script-opts/commands.conf= placed in mpv's user directory and through
 the =--script-opts= command-line option. The configuration syntax is
 described in
-[[https://mpv.io/manual/stable/#mp-options-functions][mp.options
+[[#mp-options-functions][mp.options
 functions]].
 
-<<configurable-options-3>>
+
 *** Configurable Options
     :PROPERTIES:
     :CUSTOM_ID: configurable-options-3
@@ -15859,9 +15723,8 @@ functions]].
 - =history_path= :: Default: =~~state/command_history.txt=
 
   The file path for =persist_history= (see
-  [[https://mpv.io/manual/stable/#paths][PATHS]]).
+  [[#paths][PATHS]]).
 
-<<select>>
 * SELECT
   :PROPERTIES:
   :CUSTOM_ID: select
@@ -15873,7 +15736,7 @@ providing script bindings that gather and format the data to be selected
 in the console and do operations on the selected item. It can be
 disabled using the =--load-select=no= option.
 
-<<key-bindings-1>>
+
 ** Key bindings
    :PROPERTIES:
    :CUSTOM_ID: key-bindings-1
@@ -15881,7 +15744,7 @@ disabled using the =--load-select=no= option.
 
 When using =mp.input.select=, typing printable characters does a fuzzy
 search of the presented items, and key bindings listed in
-[[https://mpv.io/manual/stable/#console][CONSOLE]] are extended with the
+[[#console][CONSOLE]] are extended with the
 following:
 
 - ENTER, Ctrl+j and Ctrl+m :: Confirm the selection of the highlighted
@@ -15897,7 +15760,6 @@ following:
 - WHEEL_UP :: Scroll up.
 - WHEEL_DOWN :: Scroll down.
 
-<<script-bindings>>
 ** Script bindings
    :PROPERTIES:
    :CUSTOM_ID: script-bindings
@@ -15905,7 +15767,7 @@ following:
 
 By default select.lua's script bindings are bound to key sequences
 starting with =g= listed in
-[[https://mpv.io/manual/stable/#keyboard-control][Keyboard Control]].
+[[#keyboard-control][Keyboard Control]].
 The names of the script bindings listed below can be used to bind them
 to different keys.
 
@@ -15946,8 +15808,7 @@ Available script bindings are:
   autocreate-playlist filter
 
 - =select-watch-later= :: Select a file from watch later config files
-  (see [[https://mpv.io/manual/stable/#resuming-playback][RESUMING
-  PLAYBACK]]) to resume playing. Requires
+  (see [[#resuming-playback][RESUMING PLAYBACK]]) to resume playing. Requires
   =--write-filename-in-watch-later-config=. This doesn't work with
   =--ignore-path-in-watch-later-config=.
 
@@ -15967,7 +15828,6 @@ Available script bindings are:
   long values that get clipped.
 - =menu= :: Show a menu with miscellaneous entries.
 
-<<configuration-4>>
 ** Configuration
    :PROPERTIES:
    :CUSTOM_ID: configuration-4
@@ -15977,10 +15837,9 @@ This script can be customized through a config file
 =script-opts/select.conf= placed in mpv's user directory and through the
 =--script-opts= command-line option. The configuration syntax is
 described in
-[[https://mpv.io/manual/stable/#mp-options-functions][mp.options
-functions]].
+[[#mp-options-functions][mp.options functions]].
 
-<<configurable-options-4>>
+
 *** Configurable options
     :PROPERTIES:
     :CUSTOM_ID: configurable-options-4
@@ -15995,7 +15854,6 @@ functions]].
 
   Whether to show only the last of history entries with the same path.
 
-<<positioning>>
 * POSITIONING
   :PROPERTIES:
   :CUSTOM_ID: positioning
@@ -16004,7 +15862,7 @@ functions]].
 This script provides script bindings to pan videos and images. It can be
 disabled using the =--load-positioning=no= option.
 
-<<script-bindings-1>>
+
 ** Script bindings
    :PROPERTIES:
    :CUSTOM_ID: script-bindings-1
@@ -16031,7 +15889,6 @@ disabled using the =--load-positioning=no= option.
   while keeping the part of the video hovered by the cursor under it, or
   the average position of touch points if known.
 
-<<configuration-5>>
 ** Configuration
    :PROPERTIES:
    :CUSTOM_ID: configuration-5
@@ -16041,10 +15898,9 @@ This script can be customized through a config file
 =script-opts/positioning.conf= placed in mpv's user directory and
 through the =--script-opts= command-line option. The configuration
 syntax is described in
-[[https://mpv.io/manual/stable/#mp-options-functions][mp.options
-functions]].
+[[#mp-options-functions][mp.options functions]].
 
-<<configurable-options-5>>
+
 *** Configurable Options
     :PROPERTIES:
     :CUSTOM_ID: configurable-options-5
@@ -16061,14 +15917,13 @@ functions]].
   Whether to not print the new value of =--video-zoom= when using
   =cursor-centric-zoom=.
 
-<<lua-scripting>>
 * LUA SCRIPTING
   :PROPERTIES:
   :CUSTOM_ID: lua-scripting
   :END:
 
 mpv can load Lua scripts. (See
-[[https://mpv.io/manual/stable/#script-location][Script location]].)
+[[#script-location][Script location]].)
 
 mpv provides the built-in module =mp=, which contains functions to send
 commands to the mpv core and to retrieve information about playback
@@ -16077,7 +15932,7 @@ state, user settings, file information, and so on.
 These scripts can be used to control mpv in a similar way to slave mode.
 Technically, the Lua code uses the client API internally.
 
-<<example>>
+
 ** Example
    :PROPERTIES:
    :CUSTOM_ID: example
@@ -16094,7 +15949,6 @@ A script which leaves fullscreen mode when the player is paused:
     mp.observe_property("pause", "bool", on_pause_change)
 #+END_EXAMPLE
 
-<<script-location>>
 ** Script location
    :PROPERTIES:
    :CUSTOM_ID: script-location
@@ -16148,7 +16002,6 @@ a =main.lua= file in the root directory, makes scripts easily updateable
 (without the dangers of auto-updates). Another suggestion is to use git
 submodules to share common files or libraries.
 
-<<details-on-the-script-initialization-and-lifecycle>>
 ** Details on the script initialization and lifecycle
    :PROPERTIES:
    :CUSTOM_ID: details-on-the-script-initialization-and-lifecycle
@@ -16194,7 +16047,6 @@ merely waits for scripts to be loaded in this manner before starting
 playback as part of the player initialization phase. Scripts run though
 initialization in parallel. This might change again.
 
-<<mp-functions>>
 ** mp functions
    :PROPERTIES:
    :CUSTOM_ID: mp-functions
@@ -16205,12 +16057,12 @@ The =mp= module is preloaded, although it can be loaded manually with
 
 - =mp.command(string)= :: Run the given command. This is similar to the
   commands used in input.conf. See
-  [[https://mpv.io/manual/stable/#list-of-input-commands][List of Input
+  [[#list-of-input-commands][List of Input
   Commands]].
 
   By default, this will show something on the OSD (depending on the
   command), as if it was used in =input.conf=. See
-  [[https://mpv.io/manual/stable/#input-command-prefixes][Input Command
+  [[#input-command-prefixes][Input Command
   Prefixes]] how to influence OSD usage per command.
 
   Returns =true= on success, or =nil, error= on error.
@@ -16248,8 +16100,7 @@ The =mp= module is preloaded, although it can be loaded manually with
   named arguments. This requires at least an entry with the key =name=
   to be present, which must be a string, and contains the command name.
   The special entry =_flags= is optional, and if present, must be an
-  array of [[https://mpv.io/manual/stable/#input-command-prefixes][Input
-  Command Prefixes]] to apply. All other entries are interpreted as
+  array of [[#input-command-prefixes][Input Command Prefixes]] to apply. All other entries are interpreted as
   arguments.
 
   Returns a result table on success (usually empty), or =def, error= on
@@ -16290,7 +16141,7 @@ The =mp= module is preloaded, although it can be loaded manually with
   itself is asynchronous. Does not return anything.
 - =mp.del_property(name)= :: Delete the given property. See
   =mp.get_property= and
-  [[https://mpv.io/manual/stable/#properties][Properties]] for more
+  [[#properties][Properties]] for more
   information about properties. Most properties cannot be deleted.
 
   Returns true on success, or =nil, error= on error.
@@ -16298,10 +16149,9 @@ The =mp= module is preloaded, although it can be loaded manually with
 - =mp.get_property(name [,def])= :: Return the value of the given
   property as string. These are the same properties as used in
   input.conf. See
-  [[https://mpv.io/manual/stable/#properties][Properties]] for a list of
+  [[#properties][Properties]] for a list of
   properties. The returned string is formatted similar to =${=name}=
-  (see [[https://mpv.io/manual/stable/#property-expansion][Property
-  Expansion]]).
+  (see [[#property-expansion][Property Expansion]]).
 
   Returns the string on success, or =def, error= on error. =def= is the
   second parameter provided to the function, and is nil if it's missing.
@@ -16339,7 +16189,7 @@ The =mp= module is preloaded, although it can be loaded manually with
 
 - =mp.set_property(name, value)= :: Set the given property to the given
   string value. See =mp.get_property= and
-  [[https://mpv.io/manual/stable/#properties][Properties]] for more
+  [[#properties][Properties]] for more
   information about properties.
 
   Returns true on success, or =nil, error= on error.
@@ -16504,8 +16354,8 @@ The =mp= module is preloaded, although it can be loaded manually with
 
   Returns true if such an event exists, false otherwise.
 
-  See [[https://mpv.io/manual/stable/#events][Events]] and
-  [[https://mpv.io/manual/stable/#list-of-events][List of events]] for
+  See [[#events][Events]] and
+  [[#list-of-events][List of events]] for
   details.
 
 - =mp.unregister_event(fn)= :: Undo =mp.register_event(..., fn)=. This
@@ -16621,13 +16471,12 @@ The =mp= module is preloaded, although it can be loaded manually with
 
 - =mp.get_script_directory()= :: Return the directory if this is a
   script packaged as directory (see
-  [[https://mpv.io/manual/stable/#script-location][Script location]] for
+  [[#script-location][Script location]] for
   a description). Return nothing if this is a single file script.
 - =mp.osd_message(text [,duration])= :: Show an OSD message on the
   screen. =duration= is in seconds, and is optional (uses
   =--osd-duration= by default).
 
-<<advanced-mp-functions>>
 ** Advanced mp functions
    :PROPERTIES:
    :CUSTOM_ID: advanced-mp-functions
@@ -16733,7 +16582,6 @@ they are useful only in special situations.
       end
   #+END_EXAMPLE
 
-<<mp-msg-functions>>
 ** mp.msg functions
    :PROPERTIES:
    :CUSTOM_ID: mp.msg-functions
@@ -16758,7 +16606,6 @@ loaded with =require 'mp.msg'=.
   are shortcuts and equivalent to the corresponding
   =msg.log(level, ...)= call.
 
-<<mp-options-functions>>
 ** mp.options functions
    :PROPERTIES:
    :CUSTOM_ID: mp.options-functions
@@ -16829,7 +16676,6 @@ Example command-line:
     --script-opts=myscript-optionA=TEST,myscript-optionB=0,myscript-optionC=yes
 #+END_EXAMPLE
 
-<<mp-utils-functions>>
 ** mp.utils functions
    :PROPERTIES:
    :CUSTOM_ID: mp.utils-functions
@@ -16963,7 +16809,6 @@ not strictly part of the guaranteed API.
   tables and their contents. This doesn't do anything special; it is
   only needed because Lua is terrible.
 
-<<mp-input-functions>>
 ** mp.input functions
    :PROPERTIES:
    :CUSTOM_ID: mp.input-functions
@@ -17067,7 +16912,6 @@ console REPL.
     #+END_EXAMPLE
   #+END_QUOTE
 
-<<events>>
 ** Events
    :PROPERTIES:
    :CUSTOM_ID: events
@@ -17091,9 +16935,8 @@ Example:
 #+END_EXAMPLE
 
 For the existing event types, see
-[[https://mpv.io/manual/stable/#list-of-events][List of events]].
+[[#list-of-events][List of events]].
 
-<<extras>>
 ** Extras
    :PROPERTIES:
    :CUSTOM_ID: extras
@@ -17124,12 +16967,11 @@ to guarantee a stable interface.
       =defer()= was called.
   #+END_QUOTE
 
-  See [[https://mpv.io/manual/stable/#hooks][Hooks]] for currently
+  See [[#hooks][Hooks]] for currently
   existing hooks and what they do - only the hook list is interesting;
   handling hook execution is done by the Lua script function
   automatically.
 
-<<javascript>>
 * JAVASCRIPT
   :PROPERTIES:
   :CUSTOM_ID: javascript
@@ -17140,7 +16982,7 @@ section as reference on differences and availability of APIs, but
 otherwise you should refer to the Lua documentation for API details and
 general scripting in mpv.
 
-<<example-1>>
+
 ** Example
    :PROPERTIES:
    :CUSTOM_ID: example-1
@@ -17156,7 +16998,6 @@ JavaScript code which leaves fullscreen mode when the player is paused:
     mp.observe_property("pause", "bool", on_pause_change);
 #+END_EXAMPLE
 
-<<similarities-with-lua>>
 ** Similarities with Lua
    :PROPERTIES:
    :CUSTOM_ID: similarities-with-lua
@@ -17172,7 +17013,6 @@ the Lua functions in the modules =mp=, =mp.utils=, =mp.msg=,
 APIs - including running commands, getting/setting properties,
 registering events/key-bindings/hooks, etc.
 
-<<differences-from-lua>>
 ** Differences from Lua
    :PROPERTIES:
    :CUSTOM_ID: differences-from-lua
@@ -17199,7 +17039,6 @@ However, some file functions were added, and CommonJS =require= is
 available too - where the loaded modules have the same privileges as
 normal scripts.
 
-<<language-features-ecmascript-5>>
 ** Language features - ECMAScript 5
    :PROPERTIES:
    :CUSTOM_ID: language-features---ecmascript-5
@@ -17211,7 +17050,6 @@ instance, while the common but non-standard =String.substr= is not.
 Please consult the MuJS pages on language features and platform
 support - [[https://mujs.com/][https://mujs.com]] .
 
-<<unsupported-lua-apis-and-their-js-alternatives>>
 ** Unsupported Lua APIs and their JS alternatives
    :PROPERTIES:
    :CUSTOM_ID: unsupported-lua-apis-and-their-js-alternatives
@@ -17231,7 +17069,6 @@ support - [[https://mujs.com/][https://mujs.com]] .
 
 =mp.dispatch_events([allow_wait])= see event loop below.
 
-<<scripting-apis-identical-to-lua>>
 ** Scripting APIs - identical to Lua
    :PROPERTIES:
    :CUSTOM_ID: scripting-apis---identical-to-lua
@@ -17368,7 +17205,6 @@ string/boolean/number)
 
 =exit()= (global)
 
-<<additional-utilities>>
 ** Additional utilities
    :PROPERTIES:
    :CUSTOM_ID: additional-utilities
@@ -17413,7 +17249,6 @@ text content only.
 - =mp.module_paths= :: Global modules search paths array for the
   =require= function (see below).
 
-<<timers-global>>
 ** Timers (global)
    :PROPERTIES:
    :CUSTOM_ID: timers-global
@@ -17452,7 +17287,6 @@ event loop iteration.
 Additionally, timers are processed after the event queue is empty, so
 it's valid to use =setTimeout(fn)= as a one-time idle observer.
 
-<<commonjs-modules-and-require-id>>
 ** CommonJS modules and =require(id)=
    :PROPERTIES:
    :CUSTOM_ID: commonjs-modules-and-requireid
@@ -17499,7 +17333,6 @@ before =require=.
 Functions and variables declared at a module don't pollute the global
 object.
 
-<<custom-initialization>>
 ** Custom initialization
    :PROPERTIES:
    :CUSTOM_ID: custom-initialization
@@ -17519,7 +17352,6 @@ The custom-init file is ignored if mpv is invoked with =--no-config=.
 Before mpv 0.34, the file name was =.init.js= (with dot) at the same
 dir.
 
-<<the-event-loop>>
 ** The event loop
    :PROPERTIES:
    :CUSTOM_ID: the-event-loop
@@ -17582,7 +17414,6 @@ callback.
 Note: =exit()= is also registered for the =shutdown= event, and its
 implementation is a simple =mp.keep_running = false=.
 
-<<json-ipc>>
 * JSON IPC
   :PROPERTIES:
   :CUSTOM_ID: json-ipc
@@ -17603,7 +17434,7 @@ themselves are insecure too. For example, the =run= command is exposed,
 which can run arbitrary system commands. The use-case is controlling the
 player locally. This is not different from the MPlayer slave protocol.
 
-<<socat-example>>
+
 ** Socat example
    :PROPERTIES:
    :CUSTOM_ID: socat-example
@@ -17638,7 +17469,6 @@ It's also possible to send input.conf style text-only commands:
 But you won't get a reply over the socket. (This particular command
 shows the playback time on the player's OSD.)
 
-<<command-prompt-example>>
 ** Command Prompt example
    :PROPERTIES:
    :CUSTOM_ID: command-prompt-example
@@ -17670,7 +17500,6 @@ You can open the pipe in PuTTY as "serial" device. This is not very
 comfortable, but gives a way to test interactively without having to
 write code.
 
-<<protocol>>
 ** Protocol
    :PROPERTIES:
    :CUSTOM_ID: protocol
@@ -17713,7 +17542,7 @@ form:
 
 where =event_name= is the name of the event. Additional event-specific
 fields can also be present. See
-[[https://mpv.io/manual/stable/#list-of-events][List of events]] for a
+[[#list-of-events][List of events]] for a
 list of all supported events.
 
 Because events can occur at any time, it may be difficult at times to
@@ -17751,7 +17580,6 @@ Additionally, lines starting with =#= and empty lines are ignored.
 Currently, embedded 0 bytes terminate the current line, but you should
 not rely on this.
 
-<<data-flow>>
 ** Data flow
    :PROPERTIES:
    :CUSTOM_ID: data-flow
@@ -17779,7 +17607,6 @@ You can also use asynchronous commands, which can return in any order,
 and which do not block IPC protocol interaction at all while the command
 is executed in the background.
 
-<<asynchronous-commands>>
 ** Asynchronous commands
    :PROPERTIES:
    :CUSTOM_ID: asynchronous-commands
@@ -17815,7 +17642,6 @@ asynchronous commands that finished execution immediately.
 Cancellation of asynchronous commands is available in the libmpv API,
 but has not yet been implemented in the IPC protocol.
 
-<<commands-with-named-arguments>>
 ** Commands with named arguments
    :PROPERTIES:
    :CUSTOM_ID: commands-with-named-arguments
@@ -17828,18 +17654,15 @@ readable, while some obscure commands basically require using named
 arguments.
 
 Currently, only "proper" commands (as listed by
-[[https://mpv.io/manual/stable/#list-of-input-commands][List of Input
-Commands]]) support named arguments.
+[[#list-of-input-commands][List of Input Commands]]) support named arguments.
 
-<<commands-2>>
 ** Commands
    :PROPERTIES:
    :CUSTOM_ID: commands-2
    :END:
 
 In addition to the commands described in
-[[https://mpv.io/manual/stable/#list-of-input-commands][List of Input
-Commands]], a few extra commands can also be used as part of the
+[[#list-of-input-commands][List of Input Commands]], a few extra commands can also be used as part of the
 protocol:
 
 - =client_name= :: Return the name of the client as string. This is the
@@ -17868,7 +17691,7 @@ protocol:
   #+END_EXAMPLE
 
 - =set_property= :: Set the given property to the given value. See
-  [[https://mpv.io/manual/stable/#properties][Properties]] for more
+  [[#properties][Properties]] for more
   information about properties.
 
   Example:
@@ -17945,7 +17768,6 @@ protocol:
 
   See also: =DOCS/client-api-changes.rst=.
 
-<<utf-8>>
 ** UTF-8
    :PROPERTIES:
    :CUSTOM_ID: utf-8
@@ -17962,7 +17784,6 @@ feeding the data to its JSON parser.
 mpv will not attempt to construct invalid UTF-8 with broken "u" escape
 sequences. This includes surrogate pairs.
 
-<<json-extensions>>
 ** JSON extensions
    :PROPERTIES:
    :CUSTOM_ID: json-extensions
@@ -17992,7 +17813,6 @@ Is equivalent to:
     { "objkey": "value\n" }
 #+END_EXAMPLE
 
-<<alternative-ways-of-starting-clients>>
 ** Alternative ways of starting clients
    :PROPERTIES:
    :CUSTOM_ID: alternative-ways-of-starting-clients
@@ -18003,9 +17823,9 @@ You can create an anonymous IPC connection without having to set
 backend that starts processes.
 
 You can put =.run= file extension in the mpv scripts directory in its
-config directory (see the [[https://mpv.io/manual/stable/#files][FILES]]
+config directory (see the [[#files][FILES]]
 section for details), or load them through other means (see
-[[https://mpv.io/manual/stable/#script-location][Script location]]).
+[[#script-location][Script location]]).
 These scripts are simply executed with the OS native mechanism (as if
 you ran them in the shell). They must have a proper shebang and have the
 executable bit set.
@@ -18021,7 +17841,6 @@ started script process.
 
 This does not work in Windows yet.
 
-<<changelog>>
 * CHANGELOG
   :PROPERTIES:
   :CUSTOM_ID: changelog
@@ -18049,7 +17868,6 @@ There is no real changelog, but you can look at the following things:
   some changes that happened since mplayer2 forked off MPlayer. (Not
   updated anymore.)
 
-<<embedding-into-other-programs-libmpv>>
 * EMBEDDING INTO OTHER PROGRAMS (LIBMPV)
   :PROPERTIES:
   :CUSTOM_ID: embedding-into-other-programs-libmpv
@@ -18064,12 +17882,11 @@ Since libmpv merely allows access to underlying mechanisms that can
 control mpv, further documentation is spread over a few places:
 
 - [[https://github.com/mpv-player/mpv/blob/master/include/mpv/client.h]]
-- [[https://mpv.io/manual/master/#options]]
-- [[https://mpv.io/manual/master/#list-of-input-commands]]
-- [[https://mpv.io/manual/master/#properties]]
+- [[#options][options]]
+- [[#list-of-input-commands][list-of-input-commands]]
+- [[#properties][properties]]
 - [[https://github.com/mpv-player/mpv-examples/tree/master/libmpv]]
 
-<<c-plugins>>
 * C PLUGINS
   :PROPERTIES:
   :CUSTOM_ID: c-plugins
@@ -18082,18 +17899,17 @@ They are enabled by default if compiler supports linking with the
 =-rdynamic= flag on Linux/BSD platforms. On Windows the are always
 enabled.
 
-<<c-plugins-location>>
+
 ** C plugins location
    :PROPERTIES:
    :CUSTOM_ID: c-plugins-location
    :END:
 
 C plugins are put into the mpv scripts directory in its config directory
-(see the [[https://mpv.io/manual/stable/#files][FILES]] section for
+(see the [[#files][FILES]] section for
 details). They must have a =.so= or =.dll= file extension. They can also
 be explicitly loaded with the =--script= option.
 
-<<api>>
 ** API
    :PROPERTIES:
    :CUSTOM_ID: api
@@ -18127,7 +17943,6 @@ install initial hooks etc. before playback begins.
 
 The details are quite similar to Lua scripts.
 
-<<linkage-to-libmpv>>
 ** Linkage to libmpv
    :PROPERTIES:
    :CUSTOM_ID: linkage-to-libmpv
@@ -18141,7 +17956,6 @@ On Windows to make symbols from the host binary available, you have to
 define MPV_CPLUGIN_DYNAMIC_SYM when compiling cplugin. This will load
 symbols dynamically, before calling =mpv_open_cplugin()=.
 
-<<examples>>
 ** Examples
    :PROPERTIES:
    :CUSTOM_ID: examples
@@ -18151,7 +17965,6 @@ See:
 
 - [[https://github.com/mpv-player/mpv-examples/tree/master/cplugins]]
 
-<<environment-variables>>
 * ENVIRONMENT VARIABLES
   :PROPERTIES:
   :CUSTOM_ID: environment-variables
@@ -18232,7 +18045,6 @@ the behavior of mpv.
     disabled.
   - =HOME= :: FIXME: Document this.
 
-<<exit-codes>>
 * EXIT CODES
   :PROPERTIES:
   :CUSTOM_ID: exit-codes
@@ -18254,7 +18066,6 @@ overriding the exit code that would be returned normally. Also, the
 =quit= input command can take an exit code: in this case, that exit code
 is returned.
 
-<<optical-drives>>
 * OPTICAL DRIVES
   :PROPERTIES:
   :CUSTOM_ID: optical-drives
@@ -18271,7 +18082,6 @@ This applies for all optical disc playback (CDDA, DVD, and BD).
 | FreeBSD   | /dev/cd0        |
 | OpenBSD   | /dev/rcd0c      |
 
-<<files>>
 * FILES
   :PROPERTIES:
   :CUSTOM_ID: files
@@ -18279,7 +18089,7 @@ This applies for all optical disc playback (CDDA, DVD, and BD).
 
 Note that this section assumes Linux/BSD. On other platforms the paths
 may be different. For Windows-specifics, see
-[[https://mpv.io/manual/stable/#files-on-windows][FILES ON WINDOWS]]
+[[#files-on-windows][FILES ON WINDOWS]]
 section.
 
 All configuration files should be encoded in UTF-8.
@@ -18319,10 +18129,9 @@ All configuration files should be encoded in UTF-8.
   this situation.
 
 - =~/.config/mpv/mpv.conf= :: mpv user settings (see
-  [[https://mpv.io/manual/stable/#configuration-files][CONFIGURATION
-  FILES]] section)
+  [[#configuration-files][CONFIGURATION FILES]] section)
 - =~/.config/mpv/input.conf= :: key bindings (see
-  [[https://mpv.io/manual/stable/#input-conf][INPUT.CONF]] section)
+  [[#input-conf][INPUT.CONF]] section)
 - =~/.config/mpv/fonts.conf= :: Fontconfig fonts.conf that is customized
   for mpv. You should include system fonts.conf in this file or mpv
   would not know about fonts that you already have in the system.
@@ -18331,15 +18140,15 @@ All configuration files should be encoded in UTF-8.
 
 - =~/.config/mpv/subfont.ttf= :: fallback subtitle font
 - =~/.config/mpv/fonts/= :: Default location for =--sub-fonts-dir= (see
-  [[https://mpv.io/manual/stable/#subtitles][Subtitles]]) and
-  =--osd-fonts-dir= (see [[https://mpv.io/manual/stable/#osd][OSD]]).
+  [[#subtitles][Subtitles]]) and
+  =--osd-fonts-dir= (see [[#osd][OSD]]).
 - =~/.config/mpv/scripts/= :: All files in this directory are loaded as
   if they were passed to the =--script= option. They are loaded in
   alphabetical order.
 
   The =--load-scripts=no= option disables loading these files.
 
-  See [[https://mpv.io/manual/stable/#script-location][Script location]]
+  See [[#script-location][Script location]]
   for details.
 
 - =~/.local/state/mpv/watch_later/= :: Contains temporary config files
@@ -18363,13 +18172,11 @@ All configuration files should be encoded in UTF-8.
 
 - =~/.config/mpv/script-opts/osc.conf= :: This is loaded by the OSC
   script. See the
-  [[https://mpv.io/manual/stable/#on-screen-controller][ON SCREEN
-  CONTROLLER]] docs for details.
+  [[#on-screen-controller][ON SCREEN CONTROLLER]] docs for details.
 
   Other files in this directory are specific to the corresponding
   scripts as well, and the mpv core doesn't touch them.
 
-<<files-on-windows>>
 * FILES ON WINDOWS
   :PROPERTIES:
   :CUSTOM_ID: files-on-windows
@@ -18389,7 +18196,7 @@ You can find the exact path by running =echo %APPDATA%\mpv\mpv.conf= in
 cmd.exe.
 
 Other config files (such as =input.conf=) are in the same directory. See
-the [[https://mpv.io/manual/stable/#files][FILES]] section above.
+the [[#files][FILES]] section above.
 
 The cache directory is located at =%LOCALAPPDATA%/mpv/cache=.
 
@@ -18420,7 +18227,6 @@ removed in the future.
 Note that mpv likes to mix =/= and =\= path separators for simplicity.
 kernel32.dll accepts this, but cmd.exe does not.
 
-<<files-on-macos>>
 * FILES ON MACOS
   :PROPERTIES:
   :CUSTOM_ID: files-on-macos
@@ -18429,12 +18235,6 @@ kernel32.dll accepts this, but cmd.exe does not.
 On macOS the watch later directory is located at
 =~/.config/mpv/watch_later/= and the cache directory is set to
 =~/Library/Caches/io.mpv/=. These directories can't be overwritten by
-environment variables. Everything else is the same as
-[[https://mpv.io/manual/stable/#files][FILES]].
+environment variables. Everything else is the same as [[#files][FILES]].
 
 © 2012-2025 mpv.io
-
-[[https://github.com/mpv-player/mpv][//]]
-[[https://twitter.com/mpv_player][//]]
-
-
