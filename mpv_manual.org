@@ -44,14 +44,10 @@ The following listings are not necessarily complete. See
 User =input.conf= files and Lua scripts can define additional key
 bindings.
 
-See [[#command-interface][COMMAND INTERFACE]] and [[#key-names][Key names]]
-sections for more details on configuring keybindings.
+See [[#command-interface][COMMAND INTERFACE]] and [[#key-names][Key names]] sections for more details on configuring keybindings.
 
-See also =--input-test= for interactive binding details by key, and the
-[[#stats][stats]] built-in script for key
-bindings list (including print to terminal). By default, the ? key
-toggles the display of this list.
-
+See also =--input-test= for interactive binding details by key, and the [[#stats][stats]] built-in script
+for key bindings list (including print to terminal). By default, the ? key toggles the display of this list.
 
 ** Keyboard Control
    :PROPERTIES:
@@ -154,11 +150,10 @@ toggles the display of this list.
   frames and so on. See [[#stats][STATS]]
   for more information.
 
-- ? :: Toggle an overlay displaying the active key bindings. See
-  [[#stats][STATS]] for more information.
+- ? :: Toggle an overlay displaying the active key bindings.
+  See [[#stats][STATS]] for more information.
 - DEL :: Cycle OSC visibility between never / auto (mouse-move) / always
-- ` :: Show the console. (ESC closes it again. See
-  [[#console][CONSOLE]].)
+- ` :: Show the console. (ESC closes it again. See [[#console][CONSOLE]].)
 
 (The following keys are valid only when using a video output that
 supports the corresponding adjustment.)
@@ -197,18 +192,16 @@ In track menus, selecting the current tracks disables it.
 - g-d :: Select an audio device.
 - g-h :: Select a file from the watch history. Requires
   =--save-watch-history=.
-- g-w :: Select a file from watch later config files (see
-  [[#resuming-playback][RESUMING PLAYBACK]]) to resume playing. Requires
+- g-w :: Select a file from watch later config files
+   (see [[#resuming-playback][RESUMING PLAYBACK]]) to resume playing. Requires
   =--write-filename-in-watch-later-config=.
 - g-b :: Select a defined input binding.
 - g-r :: Show the values of all properties.
 - g-m, MENU, Ctrl+p :: Show a menu with miscellaneous entries.
 
-See [[#select][SELECT]] for more
-information.
+See [[#select][SELECT]] for more information.
 
-(The following keys are valid if you have a keyboard with multimedia
-keys.)
+(The following keys are valid if you have a keyboard with multimedia keys.)
 
 - PAUSE :: Pause.
 - STOP :: Stop playing and quit.
@@ -532,7 +525,6 @@ They support the following operations:
 having to escape the argument (you may still need to escape on the shell
 level).
 
-
 *** Key/value list options
     :PROPERTIES:
     :CUSTOM_ID: keyvalue-list-options
@@ -564,16 +556,13 @@ the JSON IPC, use an appropriate structured data type.
 
 Prior to mpv 0.33, =:= was also recognized as separator by =-set=.
 
-
 *** Object settings list options
     :PROPERTIES:
     :CUSTOM_ID: object-settings-list-options
     :END:
 
 This is a very complex option type for some options, such as =--af= and
-=--vf=. They often require complicated escaping. See
-[[#video-filters][VIDEO FILTERS]] for
-details.
+=--vf=. They often require complicated escaping. See [[#video-filters][VIDEO FILTERS]] for details.
 
 They support the following operations:
 
@@ -587,7 +576,6 @@ They support the following operations:
 | -remove   | Delete 1 or items if present (same syntax as -set)         |
 | -toggle   | Append an item, or remove it if it already exists          |
 | -help     | Pseudo operation that prints a help text to the terminal   |
-
 
 *** General
     :PROPERTIES:
@@ -1001,9 +989,7 @@ There are three choices for using mpv from other programs or scripts:
      attempt to simulate user input by sending terminal control codes to
      mpv's stdin. If you need interactive control, using
      =--input-ipc-server= or =--input-ipc-client= is recommended. This
-     gives you access to the
-     [[#json-ipc][JSON IPC]] over unix
-     domain sockets (or named pipes on Windows).
+     gives you access to the [[#json-ipc][JSON IPC]] over unix domain sockets (or named pipes on Windows).
 
      Depending on what you do, passing =--no-config= or =--config-dir=
      may be a good idea to avoid conflicts with the normal mpv user
@@ -1022,13 +1008,9 @@ There are three choices for using mpv from other programs or scripts:
      configured to work exactly like the CLI player (except command line
      parsing is unavailable).
 
-     See
-     [[#embedding-into-other-programs-libmpv][EMBEDDING INTO OTHER PROGRAMS (LIBMPV)]].
+     See [[#embedding-into-other-programs-libmpv][EMBEDDING INTO OTHER PROGRAMS (LIBMPV)]].
 
-  3. As a user script
-     ([[#lua-scripting][LUA SCRIPTING]],
-     [[#javascript][JAVASCRIPT]],
-     [[#c-plugins][C PLUGINS]]). This is
+  3. As a user script ([[#lua-scripting][LUA SCRIPTING]], [[#javascript][JAVASCRIPT]], [[#c-plugins][C PLUGINS]]). This is
      recommended when the goal is to "enhance" the CLI player. Scripts
      get access to the entire client API of mpv.
 
@@ -1039,10 +1021,7 @@ There are three choices for using mpv from other programs or scripts:
 
 All these access the client API, which is the sum of the various
 mechanisms provided by the player core, as documented here:
-[[#options][OPTIONS]],
-[[#list-of-input-commands][List of Input Commands]], [[#properties][Properties]],
-[[#list-of-events][List of events]] (also
-see C API), [[#hooks][Hooks]].
+[[#options][OPTIONS]], [[#list-of-input-commands][List of Input Commands]], [[#properties][Properties]], [[#list-of-events][List of events]] (also see C API), [[#hooks][Hooks]].
 
 * TAKING SCREENSHOTS
   :PROPERTIES:
@@ -1054,8 +1033,7 @@ Screenshots of the currently played file can be taken using the
 key. Files named =mpv-shotNNNN.jpg= will be saved in the working
 directory, using the first available number - no files will be
 overwritten. In pseudo-GUI mode, the screenshot will be saved somewhere
-else. See [[#pseudo-gui-mode][PSEUDO GUI
-MODE]].
+else. See [[#pseudo-gui-mode][PSEUDO GUI MODE]].
 
 A screenshot will usually contain the unscaled video contents at the end
 of the video filter chain and subtitles. By default, =S= takes
@@ -1200,8 +1178,7 @@ from it. For example, if you use =quit-watch-later= on the 5th episode
 of a show, and later play all the episodes, mpv will automatically
 resume playback from episode 5.
 
-More options to configure this functionality are listed in
-[[#watch-later][Watch Later]].
+More options to configure this functionality are listed in [[#watch-later][Watch Later]].
 
 * PROTOCOLS
   :PROPERTIES:
@@ -1457,12 +1434,10 @@ More options to configure this functionality are listed in
   :CUSTOM_ID: pseudo-gui-mode
   :END:
 
-mpv has no official GUI, other than the OSC
-([[#on-screen-controller][ON SCREEN
-CONTROLLER]]), which is not a full GUI and is not meant to be. However,
-to compensate for the lack of expected GUI behavior, mpv will in some
-cases start with some settings changed to behave slightly more like a
-GUI mode.
+mpv has no official GUI, other than the OSC ([[#on-screen-controller][ON SCREEN CONTROLLER]]),
+which is not a full GUI and is not meant to be. However, to compensate
+for the lack of expected GUI behavior, mpv will in some cases start with
+some settings changed to behave slightly more like a GUI mode.
 
 Currently this happens only in the following cases:
 
@@ -1525,9 +1500,7 @@ different profile name.
   file will be used. A track that matches more subtags will be preferred
   over one that matches fewer. See also =--aid=.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
   Examples
 
@@ -1539,9 +1512,7 @@ different profile name.
 - =--slang=<languagecode[,languagecode,...]>= :: Equivalent to
   =--alang=, for subtitle tracks.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
   Examples
 
@@ -1556,9 +1527,7 @@ different profile name.
 - =--vlang=<...>= :: Equivalent to =--alang= and =--slang=, for video
   tracks.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
 - =--aid=<ID|auto|no>= :: Select audio track. =auto= selects the
   default, =no= disables audio. See also =--alang=. mpv normally prints
@@ -1851,11 +1820,11 @@ different profile name.
   choice to use for seeks; it is possible to explicitly override that
   default in the definition of key bindings and in input commands.
 
-  | no:         | Never use precise seeks.                                                                                                                                            |
-  | absolute:   | Use precise seeks if the seek is to an absolute position in the file, such as a chapter seek, but not for relative seeks like the default behavior of arrow keys.   |
-  | default:    | Like =absolute=, but enable hr-seeks in audio-only cases. The exact behavior is implementation specific and may change with new releases (default).                 |
-  | yes:        | Use precise seeks whenever possible.                                                                                                                                |
-  | always:     | Same as =yes= (for compatibility).                                                                                                                                  |
+  | no:       | Never use precise seeks.                                                                                                                                          |
+  | absolute: | Use precise seeks if the seek is to an absolute position in the file, such as a chapter seek, but not for relative seeks like the default behavior of arrow keys. |
+  | default:  | Like =absolute=, but enable hr-seeks in audio-only cases. The exact behavior is implementation specific and may change with new releases (default).               |
+  | yes:      | Use precise seeks whenever possible.                                                                                                                              |
+  | always:   | Same as =yes= (for compatibility).                                                                                                                                |
 
 - =--hr-seek-demuxer-offset=<seconds>= :: This option exists to work
   around failures to do precise seeks (as in =--hr-seek=) caused by bugs
@@ -2307,9 +2276,7 @@ different profile name.
   Lua script. The second option allows you to load multiple scripts by
   separating them with the path separator (=:= on Unix, =;= on Windows).
 
-  =--scripts= is a path list option. See
-  [[#list-options][List Options]] for
-  details.
+  =--scripts= is a path list option. See [[#list-options][List Options]] for details.
 
 - =--script-opt=<key=value>=,
   =--script-opts=key1=value1,key2=value2,...= :: Set options for
@@ -2342,9 +2309,7 @@ different profile name.
 
   The special name =all= resets as many options as possible.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
   Examples
 
@@ -2358,8 +2323,7 @@ different profile name.
 - =--show-profile=<profile>= :: Show the description and content of a
   profile. Lists all profiles if no parameter is provided.
 - =--use-filedir-conf= :: Look for a file-specific configuration file in
-  the same directory as the file that is being played. See
-  [[#file-specific-configuration-files][File-specific Configuration Files]].
+  the same directory as the file that is being played. See [[#file-specific-configuration-files][File-specific Configuration Files]].
 
   Warning
 
@@ -2517,9 +2481,7 @@ different profile name.
   supported and https URLs also bypass the proxy. This is a limitation
   in FFmpeg.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
   Example
 
@@ -2541,9 +2503,8 @@ different profile name.
   commands in the console (default: yes). The =`= key is used to
   activate this by default.
 - =--load-auto-profiles=<yes|no|auto>= :: Enable the builtin script that
-  does auto profiles (default: auto). See
-  [[#conditional-auto-profiles][Conditional auto profiles]] for details. =auto= will load the script, but
-  immediately unload it if there are no conditional profiles.
+  does auto profiles (default: auto). See [[#conditional-auto-profiles][Conditional auto profiles]] for details.
+  =auto= will load the script, but immediately unload it if there are no conditional profiles.
 - =--load-select=<yes|no>= :: Enable the builtin script that lets you
   select from lists of items (default: yes). By default, its keybindings
   start with the =g= key.
@@ -2553,8 +2514,7 @@ different profile name.
   GUI mode", which means that the defaults for some options are changed.
   This option should not normally be used directly, but only by mpv
   internally, or mpv-provided scripts, config files, or .desktop files.
-  See [[#pseudo-gui-mode][PSEUDO GUI MODE]]
-  for details.
+  See [[#pseudo-gui-mode][PSEUDO GUI MODE]] for details.
 
 ** Watch Later
    :PROPERTIES:
@@ -2604,9 +2564,7 @@ different profile name.
   See =--help=watch-later-options= for the list of the properties that
   are restored by default.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
   Examples
 
@@ -2644,8 +2602,7 @@ different profile name.
   disabled by default.
 
 - =--watch-history-path=<path>= :: The path in which to store the watch
-  history. Default: =~~state/watch_history.jsonl= (see
-  [[#paths][PATHS]]).
+  history. Default: =~~state/watch_history.jsonl= (see [[#paths][PATHS]]).
 
   This file contains one JSON object per line. Its =time= field is the
   UNIX timestamp when the file was opened, its =path= field is the
@@ -2670,8 +2627,7 @@ different profile name.
 
 - =--vf=<filter1[=parameter1:parameter2:...],filter2,...>= :: Specify a
   list of video filters to apply to the video stream. See
-  [[#video-filters][VIDEO FILTERS]] for
-  details and descriptions of the available filters. The option variants
+  [[#video-filters][VIDEO FILTERS]] for details and descriptions of the available filters. The option variants
   =--vf-add=, =--vf-pre=, and =--vf-clr= exist to modify a previously
   specified list, but you should not need these for typical use.
 - =--untimed= :: Do not sleep when outputting video frames. Useful for
@@ -2770,9 +2726,7 @@ different profile name.
   insufficient CPU resources; and even on modern systems, sufficiently
   complex content (eg: 4K60 AV1) may require it.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
   Note
 
@@ -2931,9 +2885,9 @@ different profile name.
 
   These values have special meaning:
 
-  | no:   | use the method of the =--video-aspect-method= option (default)                                                                                           |
-  | 0:    | disable aspect ratio handling, pretend the video has square pixels (deprecated, use =--video-aspect-override=no --video-aspect-method=ignore= instead)   |
-  | -1:   | strictly prefer the container aspect ratio (deprecated, use =--video-aspect-override=no --video-aspect-method=container= instead)                        |
+  | no: | use the method of the =--video-aspect-method= option (default)                                                                                         |
+  |  0: | disable aspect ratio handling, pretend the video has square pixels (deprecated, use =--video-aspect-override=no --video-aspect-method=ignore= instead) |
+  | -1: | strictly prefer the container aspect ratio (deprecated, use =--video-aspect-override=no --video-aspect-method=container= instead)                      |
 
   But note that handling of these special values might change in the
   future.
@@ -3242,9 +3196,7 @@ different profile name.
   mechanism, like =bug=, =gray=, =idct=, =ec=, =vismv=, =skip_top= (was
   =st=), =skip_bottom= (was =sb=), =debug=.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
   Example
 
@@ -3389,10 +3341,9 @@ different profile name.
   [[#audio-output-drivers][AUDIO OUTPUT DRIVERS]] for details and descriptions of available drivers.
 - =--af=<filter1[=parameter1:parameter2:...],filter2,...>= :: Specify a
   list of audio filters to apply to the audio stream. See
-  [[#audio-filters][AUDIO FILTERS]] for
-  details and descriptions of the available filters. The option variants
-  =--af-add=, =--af-pre=, and =--af-clr= exist to modify a previously
-  specified list, but you should not need these for typical use.
+  [[#audio-filters][AUDIO FILTERS]] for details and descriptions of the available filters.
+  The option variants =--af-add=, =--af-pre=, and =--af-clr= exist to modify
+  a previously specified list, but you should not need these for typical use.
 - =--audio-spdif=<codecs>= :: List of codecs for which compressed audio
   passthrough should be used. This works for both classic S/PDIF and
   HDMI.
@@ -3501,9 +3452,7 @@ different profile name.
   unknown options through the AVOption system is welcome. A full list of
   AVOptions can be found in the FFmpeg manual.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
 - =--ad-spdif-dtshd=<yes|no>=, =--dtshd=<yes|no>= :: If DTS is passed
   through, use DTS-HD.
@@ -3593,9 +3542,7 @@ different profile name.
 - =--audio-files=<files>= :: Play audio from an external file while
   viewing a video.
 
-  This is a path list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a path list option. See [[#list-options][List Options]] for details.
 
 - =--audio-file=<file>= :: CLI/config file only alias for
   =--audio-files-append=. Each use of this option will add a new audio
@@ -3648,16 +3595,13 @@ different profile name.
   when using =--audio-file-auto=, =--autocreate-playlist= or
   =--directory-filter-types=.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
+  This is a string list option. See [[#list-options][List Options]] for
   details. Use =--help=audio-exts= to see default extensions.
 
 - =--audio-file-paths=<path1:path2:...>= :: Equivalent to
   =--sub-file-paths= option, but for auto-loaded audio files.
 
-  This is a path list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a path list option. See [[#list-options][List Options]] for details.
 
 - =--audio-client-name=<name>= :: The application name the player
   reports to the audio API. Can be useful if you want to force a
@@ -3723,9 +3667,7 @@ intentionally, but overriding them can be controlled with
   all unknown options through the AVOption system is welcome. A full
   list of AVOptions can be found in the FFmpeg manual.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
 - =--sub-delay=<sec>= :: Delays primary subtitles by =<sec>= seconds.
   Can be negative.
@@ -3744,9 +3686,8 @@ intentionally, but overriding them can be controlled with
   printed on the terminal output after the =--sid== in the list of
   streams.)
 
-  =--sub-files= is a path list option (see
-  [[#list-options][List Options]] for
-  details), and can take multiple file names separated by =:= (Unix) or
+  =--sub-files= is a path list option (see [[#list-options][List Options]] for details),
+  and can take multiple file names separated by =:= (Unix) or
   =;= (Windows), while =--sub-file= takes a single filename, but can be
   used multiple times to add multiple files. Technically, =--sub-file=
   is a CLI/config file only alias for =--sub-files-append=.
@@ -3853,9 +3794,7 @@ intentionally, but overriding them can be controlled with
 - =--sub-ass-style-overrides=<[Style.]Param=Value[,...]>= :: Override
   some style or script info parameters.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
   Examples
 
@@ -4075,9 +4014,7 @@ intentionally, but overriding them can be controlled with
   match when using =--sub-auto=. Note that modifying this list will also
   affect what mpv recognizes as subtitles when using drag and drop.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
 - =--sub-codepage=<codepage>= :: You can use this option to specify the
   subtitle codepage. uchardet will be used to guess the charset. (If mpv
@@ -4171,9 +4108,7 @@ intentionally, but overriding them can be controlled with
   - =/path/to/video/subtitles/=
   - the =sub= configuration subdirectory (usually =~/.config/mpv/sub/=)
 
-  This is a path list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a path list option. See [[#list-options][List Options]] for details.
 
 - =--sub-visibility=<yes|no>= :: Can be used to disable display of
   subtitles, but still select and decode them.
@@ -4399,9 +4334,8 @@ intentionally, but overriding them can be controlled with
 
 - =--sub-filter-regex-...=...= :: Set a list of regular expressions to
   match on text subtitles, and remove any lines that match (default:
-  empty). This is a string list option. See
-  [[#list-options][List Options]] for
-  details. Normally, you should use =--sub-filter-regex-append=<regex>=,
+  empty). This is a string list option. See [[#list-options][List Options]] for details.
+  Normally, you should use =--sub-filter-regex-append=<regex>=,
   where each option use will append a new regular expression, without
   having to fight escaping problems.
 
@@ -4476,8 +4410,7 @@ intentionally, but overriding them can be controlled with
   mpv/libass for subtitles. Useful if you do not want to install fonts
   to your system. Note that files in this directory are loaded into
   memory before being used by mpv. If you have a lot of fonts, consider
-  using fonts.conf (see [[#files][FILES]]
-  section) to include additional mpv user settings.
+  using fonts.conf (see [[#files][FILES]] section) to include additional mpv user settings.
 
   If this option is not specified, =~~/fonts= will be used by default.
 
@@ -4489,8 +4422,7 @@ intentionally, but overriding them can be controlled with
 - =--title=<string>= :: Set the window title. This is used for the video
   window, and if possible, also sets the audio stream title.
 
-  Properties are expanded. (See
-  [[#property-expansion][Property Expansion]].)
+  Properties are expanded. (See [[#property-expansion][Property Expansion]].)
 
   Warning
 
@@ -4559,9 +4491,9 @@ intentionally, but overriding them can be controlled with
 
   The following arguments can be given:
 
-  | no:       | If the current file ends, go to the next file or terminate. (Default.)                                                                         |
-  | yes:      | Don't terminate if the current file is the last playlist entry. Equivalent to =--keep-open= without arguments.                                 |
-  | always:   | Like =yes=, but also applies to files before the last playlist entry. This means playback will never automatically advance to the next file.   |
+  | no:     | If the current file ends, go to the next file or terminate. (Default.)                                                                       |
+  | yes:    | Don't terminate if the current file is the last playlist entry. Equivalent to =--keep-open= without arguments.                               |
+  | always: | Like =yes=, but also applies to files before the last playlist entry. This means playback will never automatically advance to the next file. |
 
   Note
 
@@ -4974,15 +4906,12 @@ intentionally, but overriding them can be controlled with
    :END:
 
 - =--cdda-device=<path>= :: Specify the CD device for CDDA playback. The
-  default device path depends on the OS. See the
-  [[#optical-drives][OPTICAL DRIVES]]
-  section.
+  default device path depends on the OS. See the [[#optical-drives][OPTICAL DRIVES]] section.
+  
 - =--dvd-device=<path>= :: Specify the DVD device or .iso filename. You
   can also specify a directory that contains files previously copied
   directly from a DVD (with e.g. vobcopy). The default device path
-  depends on the OS. See the
-  [[#optical-drives][OPTICAL DRIVES]]
-  section.
+  depends on the OS. See the [[#optical-drives][OPTICAL DRIVES]] section.
 
   Example
 
@@ -4990,9 +4919,7 @@ intentionally, but overriding them can be controlled with
 
 - =--bluray-device=<path>= :: Specify the Blu-ray disc location. Must be
   a directory with Blu-ray structure. The default device path depends on
-  the OS. See the
-  [[#optical-drives][OPTICAL DRIVES]]
-  section.
+  the OS. See the [[#optical-drives][OPTICAL DRIVES]] section.
 
   Example
 
@@ -5103,9 +5030,7 @@ intentionally, but overriding them can be controlled with
   be found in the FFmpeg manual. Note that some options may conflict
   with mpv options.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
   Example
 
@@ -5455,9 +5380,7 @@ intentionally, but overriding them can be controlled with
   files are added to the playlist. (Default:
   =video,audio,image,archive,playlist=)
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
 - =--autocreate-playlist=<no|filter|same>= :: When opening a local file,
   act as if the parent directory is opened and create a playlist
@@ -5518,9 +5441,7 @@ intentionally, but overriding them can be controlled with
   run immediately). When changing values at runtime, the commands will
   also run as soon as possible.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
   Example
 
@@ -5541,8 +5462,7 @@ intentionally, but overriding them can be controlled with
   key presses, mpv will show the keys and the bound commands on the OSD.
   Has to be used with a dummy video, and the normal ways to quit the
   player will not work (key bindings that normally quit will be shown on
-  OSD only, just like any other binding). See
-  [[#input-conf][INPUT.CONF]].
+  OSD only, just like any other binding). See [[#input-conf][INPUT.CONF]].
 - =--input-terminal=<yes|no>= :: =--input-terminal=no= prevents the
   player from reading key events from standard input. Useful when
   reading data from standard input. This is automatically enabled when
@@ -5725,8 +5645,7 @@ intentionally, but overriding them can be controlled with
 - =--osd-msg1=<string>= :: Show this string as message on OSD with OSD
   level 1 (visible by default). The message will be visible by default,
   and as long as no other message covers it, and the OSD level isn't
-  changed (see =--osd-level=). Expands properties; see
-  [[#property-expansion][Property Expansion]].
+  changed (see =--osd-level=). Expands properties; see [[#property-expansion][Property Expansion]].
 - =--osd-msg2=<string>= :: Similar to =--osd-msg1=, but for OSD level 2.
   If this is an empty string (default), then the playback time is shown.
 - =--osd-msg3=<string>= :: Similar to =--osd-msg1=, but for OSD level 3.
@@ -5745,8 +5664,7 @@ intentionally, but overriding them can be controlled with
   used for =--osd-level=3=, when using the =show-progress= command (by
   default mapped to =P=), and when seeking if enabled with
   =--osd-on-seek= or =osd-= prefixes in input.conf (see
-  =Input Command Prefixes=). Expands properties. See
-  [[#property-expansion][Property Expansion]].
+  =Input Command Prefixes=). Expands properties. See [[#property-expansion][Property Expansion]].
 
   This option has been replaced with =--osd-msg3=. The only difference
   is that this option implicitly includes =${osd-sym-cc}=. This option
@@ -6018,9 +5936,8 @@ intentionally, but overriding them can be controlled with
   trying to write a screenshot.
 
   This option is not set by default, and thus will write screenshots to
-  the directory from which mpv was started. In pseudo-gui mode (see
-  [[#pseudo-gui-mode][PSEUDO GUI MODE]]),
-  this is set to the desktop.
+  the directory from which mpv was started. In pseudo-gui mode
+  (see [[#pseudo-gui-mode][PSEUDO GUI MODE]]), this is set to the desktop.
 
 - =--screenshot-jpeg-quality=<0-100>= :: Set the JPEG quality level.
   Higher means better quality. The default is 90.
@@ -6071,9 +5988,7 @@ intentionally, but overriding them can be controlled with
   encoder. Above options may not be valid and or optimal for other
   encoders.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
   Example
 
@@ -6227,9 +6142,7 @@ places).
 - =--audio-swresample-o=<string>= :: Set AVOptions on the SwrContext or
   AVAudioResampleContext. These should be documented by FFmpeg.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
 ** Terminal
    :PROPERTIES:
@@ -6330,8 +6243,8 @@ places).
   See [[#property-expansion][Property Expansion]].
 
 - =--term-status-msg=<string>= :: Print out a custom string during
-  playback instead of the standard status line. Expands properties. See
-  [[#property-expansion][Property Expansion]].
+  playback instead of the standard status line. Expands properties.
+  See [[#property-expansion][Property Expansion]].
 - =--term-title=<string>= :: Set the terminal title. Currently, this
   simply concatenates the escape sequence setting the window title with
   the provided (property expanded) string. This will mess up if the
@@ -6339,8 +6252,7 @@ places).
   terminal does not understand the sequence. The latter probably
   includes the regrettable win32.
 
-  Expands properties. See
-  [[#property-expansion][Property Expansion]].
+  Expands properties. See [[#property-expansion][Property Expansion]].
 
 - =--msg-module= :: Prepend module name to each console message.
 - =--msg-time= :: Prepend timing information to each console message.
@@ -6544,9 +6456,7 @@ places).
 - =--http-header-fields=<field1,field2>= :: Set custom HTTP fields when
   accessing HTTP stream.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
   Example
 
@@ -7662,10 +7572,10 @@ them.
 
   =<timer>= can be one of the following:
 
-  | callback:   | Syncs to the CVDisplayLink callback                                                                                  |
-  | precise:    | Syncs to the time of the next vertical display refresh reported by the CVDisplayLink callback provided information   |
-  | system:     | No manual syncing, depend on the layer mechanic and the next drawable                                                |
-  | feedback:   | Same as precise but uses the presentation feedback core mechanism                                                    |
+  | callback: | Syncs to the CVDisplayLink callback                                                                                |
+  | precise:  | Syncs to the time of the next vertical display refresh reported by the CVDisplayLink callback provided information |
+  | system:   | No manual syncing, depend on the layer mechanic and the next drawable                                              |
+  | feedback: | Same as precise but uses the presentation feedback core mechanism                                                  |
 
 - =--macos-menu-shortcuts=<yes|no>= :: Enables the default menu bar
   shortcuts (default: yes). The menu bar shortcuts always take
@@ -7728,9 +7638,7 @@ them.
   - macvk :: Vulkan on macOS with a metal surface through a translation
     layer (experimental)
 
-  This is an object settings list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is an object settings list option. See [[#list-options][List Options]] for details.
 
 - =--gpu-api=<type1,type2,...[,]>= :: Specify a priority list of
   accepted graphics APIs.
@@ -7744,9 +7652,7 @@ them.
     =--spirv-compiler=)
   - d3d11 :: Allow only =--gpu-context=d3d11=
 
-  This is an object settings list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is an object settings list option. See [[#list-options][List Options]] for details.
 
 - =--opengl-es=<mode>= :: Controls which type of OpenGL context will be
   accepted:
@@ -8417,9 +8323,7 @@ them.
   The default includes a common list of tags, call mpv with
   =--list-options= to see it.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
 - =--mf-fps=<value>= :: Framerate used when decoding from multiple PNG
   or JPEG files with =mf://= (default: 1).
@@ -8437,9 +8341,7 @@ them.
   protocols, and printing errors for unknown options would end up being
   too noisy.)
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
 - =--backdrop-type=<auto|none|mica|acrylic|mica-alt>= :: (Windows only)
   Controls the backdrop/border style.
@@ -8484,9 +8386,7 @@ them.
   This makes it slightly less intrusive. (In mpv 0.28.0 and before, this
   was not quite strictly enforced.)
 
-  This is a path list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a path list option. See [[#list-options][List Options]] for details.
 
 - =--external-file=<file>= :: CLI/config file only alias for
   =--external-files-append=. Each use of this option will add a new
@@ -8505,9 +8405,7 @@ them.
   paragraph describes the behavior coincidentally resulting from
   implementation details.)
 
-  This is a path list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a path list option. See [[#list-options][List Options]] for details.
 
 - =--cover-art-file=<file>= :: CLI/config file only alias for
   =--cover-art-files-append=. Each use of this option will add a new
@@ -8532,10 +8430,8 @@ them.
   =--directory-filter-types=.
 
   This is a string list option. See
-  [[#list-options][List Options]] for
-  details. Use =--help=image-exts= to see default extensions.
-
-- =--cover-art-whitelist=filename1,filename2,...= :: Filenames to load
+  [[#list-options][List Options]] for details.
+  Use =--help=image-exts= to see default extensions.- =--cover-art-whitelist=filename1,filename2,...= :: Filenames to load
   as cover art, sorted by descending priority. They are combined with
   the extensions in =--image-exts=. This has no effect if
   =cover-art-auto= is =no=.
@@ -8543,32 +8439,27 @@ them.
   Default:
   =AlbumArt,Album,cover,front,AlbumArtSmall,Folder,.folder,thumb=
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
 - =--video-exts=ext1,ext2,...= :: Video file extensions to try to match
   when using =--autocreate-playlist= or =--directory-filter-types=.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details. Use =--help=video-exts= to see default extensions.
+  This is a string list option. See [[#list-options][List Options]] for details.
+  Use =--help=video-exts= to see default extensions.
 
 - =--archive-exts=ext1,ext2,...= :: Archive file extensions to try to
   match when using =--autocreate-playlist= or
   =--directory-filter-types=.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details. Use =--help=archive-exts= to see the default extensions.
+  This is a string list option. See [[#list-options][List Options]] for details.
+  Use =--help=archive-exts= to see the default extensions.
 
 - =--playlist-exts=ext1,ext2,...= :: Playlist file extensions to try to
   match when using =--autocreate-playlist= or
   =--directory-filter-types=.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details. Use =--help=playlist-exts= to see the default extensions.
+  This is a string list option. See [[#list-options][List Options]] for details.
+  Use =--help=playlist-exts= to see the default extensions.
 
 - =--autoload-files=<yes|no>= :: Automatically load/select external
   files (default: yes).
@@ -8698,9 +8589,7 @@ them.
     Wayland compositors without support for the =ext-data-control-v1=
     protocol, or if the =wayland= backend is disabled.
 
-  This is an object settings list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is an object settings list option. See [[#list-options][List Options]] for details.
 
 - =--clipboard-monitor=<yes|no>= :: (Windows, Wayland and macOS only)
 
@@ -8728,9 +8617,7 @@ facilities. The syntax is:
 If the list has a trailing ',', mpv will fall back on drivers not
 contained in the list.
 
-This is an object settings list option. See
-[[#list-options][List Options]] for
-details.
+This is an object settings list option. See [[#list-options][List Options]] for details.
 
 Note
 
@@ -8789,10 +8676,9 @@ Available audio output drivers are:
   explicitly reject multichannel output, as there is no way to detect
   whether a certain channel layout is actually supported.
 
-  You can also try
-  [[https://github.com/mpv-player/mpv/wiki/ALSA-Surround-Sound-and-Upmixing][using the upmix plugin]]. This setup enables multichannel audio on the
-  =default= device with automatic upmixing with shared access, so
-  playing stereo and multichannel audio at the same time will work as
+  You can also try [[https://github.com/mpv-player/mpv/wiki/ALSA-Surround-Sound-and-Upmixing][using the upmix plugin]]. This setup enables multichannel
+  audio on the =default= device with automatic upmixing with shared access,
+  so playing stereo and multichannel audio at the same time will work as
   expected.
 
 - =oss= :: OSS audio output driver
@@ -8852,8 +8738,7 @@ Available audio output drivers are:
   using direct device access and exclusive mode (bypasses the sound
   server).
 - =avfoundation= (macOS only) :: Native macOS audio output driver using
-  =AVSampleBufferAudioRenderer= in AVFoundation, which supports
-  [[https://support.apple.com/en-us/HT211775][spatial audio]].
+  =AVSampleBufferAudioRenderer= in AVFoundation, which supports [[https://support.apple.com/en-us/HT211775][spatial audio]].
 
   Warning
 
@@ -9008,9 +8893,7 @@ facilities. The syntax is:
 If the list has a trailing =,=, mpv will fall back on drivers not
 contained in the list.
 
-This is an object settings list option. See
-[[#list-options][List Options]] for
-details.
+This is an object settings list option. See [[#list-options][List Options]] for details.
 
 Note
 
@@ -9031,8 +8914,7 @@ Available video output drivers are:
   driver. It supports extended scaling methods, dithering, color
   management, custom shaders, HDR, and more.
 
-  See [[#gpu-renderer-options][GPU renderer
-  options]] for options specific to this VO.
+  See [[#gpu-renderer-options][GPU renderer options]] for options specific to this VO.
 
   By default, mpv utilizes settings that balance quality and
   performance. Additionally, two predefined profiles are available:
@@ -9059,8 +8941,8 @@ Available video output drivers are:
   enabling the =--gpu-dumb-mode=yes= option.
 
 - =gpu-next= :: Experimental video renderer based on =libplacebo=. This
-  supports almost the same set of features as =--vo=gpu=. See
-  [[#gpu-renderer-options][GPU renderer options]] for a list.
+  supports almost the same set of features as =--vo=gpu=.
+  See [[#gpu-renderer-options][GPU renderer options]] for a list.
 
   Should generally be faster and higher quality, but some features may
   still be missing or misbehave. Expect (and report!) bugs. See here for
@@ -9670,9 +9552,7 @@ Available video output drivers are:
   Since mpv 0.30.0, you may need to use =--profile=sw-fast= to get
   decent performance.
 
-  Note
-
-  This is a fallback only, and should not be normally used.
+  Note: This is a fallback only, and should not be normally used.
 
 * AUDIO FILTERS
   :PROPERTIES:
@@ -9682,17 +9562,12 @@ Available video output drivers are:
 Audio filters allow you to modify the audio stream and its properties.
 The syntax is:
 
-- =--af=...= :: Setup a chain of audio filters. See =--vf=
-  ([[#video-filters][VIDEO FILTERS]]) for
-  the full syntax.
+- =--af=...= :: Setup a chain of audio filters.
+  See =--vf= ([[#video-filters][VIDEO FILTERS]]) for the full syntax.
 
-  This is an object settings list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is an object settings list option. See [[#list-options][List Options]] for details.
 
-Note
-
-To get a full list of available audio filters, see =--af=help=.
+Note: to get a full list of available audio filters, see =--af=help=.
 
 Also, keep in mind that most actual filters are available via the
 =lavfi= wrapper, which gives you access to most of libavfilter's
@@ -9937,9 +9812,7 @@ The exact syntax is:
   See the =vf= command (and =toggle= sub-command) for further
   explanations and examples.
 
-  This is an object settings list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is an object settings list option. See [[#list-options][List Options]] for details.
 
   The general filter entry syntax is:
 
@@ -9978,14 +9851,11 @@ used. Use =--lavfi-complex= for such a use case. This also applies for
 =--af=.
 
 Filters can be manipulated at run time. You can use =@= labels as
-described above in combination with the =vf= command (see
-[[#command-interface][COMMAND INTERFACE]])
+described above in combination with the =vf= command (see [[#command-interface][COMMAND INTERFACE]])
 to get more control over this. Initially disabled filters with =!= are
 useful for this as well.
 
-Note
-
-To get a full list of available video filters, see =--vf=help= and
+Note: to get a full list of available video filters, see =--vf=help= and
 [[https://ffmpeg.org/ffmpeg-filters.html]] .
 
 Also, keep in mind that most actual filters are available via the
@@ -10279,8 +10149,7 @@ Available mpv-only filters are:
   - =<graph>= :: The libavfilter graph string. The filter must have a
     single video input pad and a single video output pad.
 
-    See [[https://ffmpeg.org/ffmpeg-filters.html]] for syntax and
-    available filters.
+    See [[https://ffmpeg.org/ffmpeg-filters.html]] for syntax and available filters.
 
     Warning
 
@@ -10518,11 +10387,13 @@ Available mpv-only filters are:
       deinterlacing algorithms. Whether these actually work depends on
       the GPU hardware, the GPU drivers, driver bugs, and mpv bugs.
 
-  - =<interlaced-only>= :: | no:    | Deinterlace all frames (default).               |
-    | yes:   | Only deinterlace frames marked as interlaced.   |
+  - =<interlaced-only>= :: |
+    | no:  | Deinterlace all frames (default).             |
+    | yes: | Only deinterlace frames marked as interlaced. |
 
-  - =reversal-bug=<yes|no>= :: | no:    | Use the API as it was interpreted by older Mesa drivers. While this interpretation was more obvious and intuitive, it was apparently wrong, and not shared by Intel driver developers.              |
-    | yes:   | Use Intel interpretation of surface forward and backwards references (default). This is what Intel drivers and newer Mesa drivers expect. Matters only for the advanced deinterlacing algorithms.   |
+  - =reversal-bug=<yes|no>= ::
+    | no:  | Use the API as it was interpreted by older Mesa drivers. While this interpretation was more obvious and intuitive, it was apparently wrong, and not shared by Intel driver developers.            |
+    | yes: | Use Intel interpretation of surface forward and backwards references (default). This is what Intel drivers and newer Mesa drivers expect. Matters only for the advanced deinterlacing algorithms. |
 
 - =vdpaupp= :: VDPAU video post processing. Works with =--vo=vdpau= and
   =--vo=gpu= only. This filter is automatically inserted if
@@ -10653,8 +10524,8 @@ Available mpv-only filters are:
 
   - =type=...= :: What fingerprint to compute. Available types are:
 
-    | gray-hex-8x8:     | grayscale, 8 bit, 8x8 size               |
-    | gray-hex-16x16:   | grayscale, 8 bit, 16x16 size (default)   |
+    | gray-hex-8x8:   | grayscale, 8 bit, 8x8 size             |
+    | gray-hex-16x16: | grayscale, 8 bit, 16x16 size (default) |
 
     Both types simply remove all colors, downscale the image,
     concatenate all pixel values to a byte array, and convert the array
@@ -10725,9 +10596,7 @@ facility.
 - =--ofopts=<options>= :: Specifies the output format options for
   libavformat. See =--ofopts=help= for a full list of supported options.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
   - =--ofopts-add=<option>= :: Appends the option given as an argument
     to the options list. (Passing multiple options is currently still
@@ -10744,9 +10613,7 @@ facility.
   - "=--oac=libmp3lame --oacopts=b=128000=" :: selects 128 kbps MP3
     encoding.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
   - =--oacopts-add=<option>= :: Appends the option given as an argument
     to the options list. (Passing multiple options is currently still
@@ -10765,9 +10632,7 @@ facility.
   - ="--ovc=libx264 --ovcopts=crf=23"= :: selects VBR quality factor 23
     for H.264 encoding.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
   - =--ovcopts-add=<option>= :: Appends the option given as an argument
     to the options list. (Passing multiple options is currently still
@@ -10785,9 +10650,7 @@ facility.
   output formats. For example, Matroska (MKV) and FLAC allow almost
   arbitrary keys, while support in MP4 and MP3 is more limited.
 
-  This is a key/value list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a key/value list option. See [[#list-options][List Options]] for details.
 
   Example
 
@@ -10798,9 +10661,7 @@ facility.
   metadata to exclude from the output file when copying from the input
   file.
 
-  This is a string list option. See
-  [[#list-options][List Options]] for
-  details.
+  This is a string list option. See [[#list-options][List Options]] for details.
 
   Example
 
@@ -11015,8 +10876,8 @@ syntax" in a number of other places.
 
 =<argument> ::= (<unquoted> | " <double_quoted> " | ' <single_quoted> ' | `X <custom_quoted> X`)=
 
-=command_name= is an unquoted string with the command name itself. See
-[[#list-of-input-commands][List of Input Commands]] for a list.
+=command_name= is an unquoted string with the command name itself.
+See [[#list-of-input-commands][List of Input Commands]] for a list.
 
 Arguments are separated by whitespaces even if the command expects only
 one argument. Arguments with whitespaces or other special characters
@@ -11043,10 +10904,7 @@ Note that argument parsing and property expansion happen at different
 stages. First, arguments are determined as described above, and then,
 where applicable, properties are expanded - regardless of argument
 quoting. However, expansion can still be prevented with the =raw= prefix
-or =$>=. See
-[[#input-command-prefixes][Input Command Prefixes]] and
-[[#property-expansion][Property Expansion]].
-
+or =$>=. See [[#input-command-prefixes][Input Command Prefixes]] and [[#property-expansion][Property Expansion]].
 ** Commands specified as arrays
    :PROPERTIES:
    :CUSTOM_ID: commands-specified-as-arrays
@@ -11071,18 +10929,15 @@ command APIs mentioned above pass strings directly to the argument
 parsers, or can sidestep them by the ability to pass non-string values.
 
 Property expansion is disabled by default for these APIs. This can be
-changed with the =expand-properties= prefix. See
-[[#input-command-prefixes][Input Command Prefixes]].
+changed with the =expand-properties= prefix. See [[#input-command-prefixes][Input Command Prefixes]].
 
 Sometimes commands have string arguments, that in turn are actually
 parsed by other components (e.g. filter strings with =vf add=) - in
 these cases, you you would have to double-escape in input.conf, but not
 with the array APIs.
 
-For complex commands, consider using
-[[#named-arguments][Named arguments]]
-instead, which should give slightly more compatibility. Some commands do
-not support named arguments and inherently take an array, though.
+For complex commands, consider using [[#named-arguments][Named arguments]] instead, which should
+give slightly more compatibility. Some commands do not support named arguments and inherently take an array, though.
 
 ** Named arguments
    :PROPERTIES:
@@ -11105,8 +10960,7 @@ Named arguments are not supported in the "flat" input.conf syntax, which
 means you cannot use them for key bindings in input.conf at all.
 
 Property expansion is disabled by default for these APIs. This can be
-changed with the =expand-properties= prefix. See
-[[#input-command-prefixes][Input Command Prefixes]].
+changed with the =expand-properties= prefix. See [[#input-command-prefixes][Input Command Prefixes]].
 
 ** List of Input Commands
    :PROPERTIES:
@@ -11118,9 +10972,7 @@ Don't add those to the actual command. Optional arguments are enclosed
 in =[= / =]=. If you don't pass them, they will be set to a default
 value.
 
-Remember to quote string arguments in input.conf (see
-[[#flat-command-syntax][Flat command syntax]]).
-
+Remember to quote string arguments in input.conf (see [[#flat-command-syntax][Flat command syntax]]).
 
 *** Playback Control
     :PROPERTIES:
@@ -11152,8 +11004,7 @@ Remember to quote string arguments in input.conf (see
   parameter is still parsed, but is considered deprecated.
 
   This is a scalable command. See the documentation of =nonscalable=
-  input command prefix in
-  [[#input-command-prefixes][Input Command Prefixes]] for details.
+  input command prefix in [[#input-command-prefixes][Input Command Prefixes]] for details.
 
 - =revert-seek [<flags>]= :: Undoes the =seek= command, and some other
   commands that seek (but not necessarily all of them). Calling this
@@ -11190,9 +11041,8 @@ Remember to quote string arguments in input.conf (see
 
   For embedded subtitles (like with Matroska), this works only with
   subtitle events that have already been displayed, or are within a
-  short prefetch range. See
-  [[#cache][Cache]] for details on how to
-  control the available prefetch range.
+  short prefetch range.
+  See [[#cache][Cache]] for details on how to control the available prefetch range.
 
 - =frame-step [<frames>] [<flags>]= :: Go forward or backwards by a
   given amount of frames. If =<frames>= is omitted, the value is assumed
@@ -11241,7 +11091,6 @@ Remember to quote string arguments in input.conf (see
 
   - keep-playlist :: Do not clear the playlist.
 
-
 *** Property Manipulation
     :PROPERTIES:
     :CUSTOM_ID: property-manipulation
@@ -11261,8 +11110,7 @@ Remember to quote string arguments in input.conf (see
   =osd-level=).
 
   This is a scalable command. See the documentation of =nonscalable=
-  input command prefix in
-  [[#input-command-prefixes][Input Command Prefixes]] for details.
+  input command prefix in [[#input-command-prefixes][Input Command Prefixes]] for details.
 
 - =multiply <name> <value>= :: Similar to =add=, but multiplies the
   property or option with the numeric value.
@@ -11277,8 +11125,7 @@ Remember to quote string arguments in input.conf (see
   =osd-level=).
 
   This is a scalable command. See the documentation of =nonscalable=
-  input command prefix in
-  [[#input-command-prefixes][Input Command Prefixes]] for details.
+  input command prefix in [[#input-command-prefixes][Input Command Prefixes]] for details.
 
 - =cycle-values [<"!reverse">] <property> <value1> [<value2> [...]]= :: Cycle
   through a list of values. Each invocation of the command will set the
@@ -11297,10 +11144,9 @@ Remember to quote string arguments in input.conf (see
   backwards.
 
 - =change-list <name> <operation> <value>= :: This command changes list
-  options as described in
-  [[#list-options][List Options]]. The
-  =<name>= parameter is the normal option name, while =<operation>= is
-  the suffix or action used on the option.
+  options as described in [[#list-options][List Options]].
+  The =<name>= parameter is the normal option name, while =<operation>=
+  is the suffix or action used on the option.
 
   Some operations take no value, but the command still requires the
   value parameter. In these cases, the value must be an empty string.
@@ -11312,7 +11158,6 @@ Remember to quote string arguments in input.conf (see
   Add a filename to the =glsl-shaders= list. The command line equivalent
   is =--glsl-shaders-append=file.glsl= or alternatively
   =--glsl-shader=file.glsl=.
-
 
 *** Playlist Manipulation
     :PROPERTIES:
@@ -11402,8 +11247,7 @@ Remember to quote string arguments in input.conf (see
   =opt1=value1,opt2=value2,..=. When using the client API, this can be a
   =MPV_FORMAT_NODE_MAP= (or a Lua table), however the values themselves
   must be strings currently. These options are set during playback, and
-  restored to the previous value at end of playback (see
-  [[#per-file-options][Per-File Options]]).
+  restored to the previous value at end of playback (see [[#per-file-options][Per-File Options]]).
 
   Warning
 
@@ -11465,7 +11309,6 @@ Remember to quote string arguments in input.conf (see
   =playlist-unshuffle= commands do nothing). May not work correctly if
   new recursive playlists have been opened since a =playlist-shuffle=
   command.
-
 
 *** Track Manipulation
     :PROPERTIES:
@@ -11573,19 +11416,16 @@ Remember to quote string arguments in input.conf (see
     improved on request.)
   - <keep-selection> :: Do not change current track selections.
 
-
 *** Text Manipulation
     :PROPERTIES:
     :CUSTOM_ID: text-manipulation
     :END:
 
 - =print-text <text>= :: Print text to stdout. The string can contain
-  properties (see
-  [[#property-expansion][Property Expansion]]). Take care to put the argument in quotes.
+  properties (see [[#property-expansion][Property Expansion]]). Take care to put the argument in quotes.
 - =expand-text <text>= :: Property-expand the argument and return the
   expanded string. This can be used only through the client API or from
-  a script using =mp.command_native=. (see
-  [[#property-expansion][Property Expansion]]).
+  a script using =mp.command_native=. (see [[#property-expansion][Property Expansion]]).
 - =expand-path <text>= :: Expand a path's double-tilde placeholders into
   a platform-specific path. As =expand-text=, this can only be used
   through the client API or from a script using =mp.command_native=.
@@ -11624,7 +11464,6 @@ Remember to quote string arguments in input.conf (see
 
   This line of Lua prints "foo \{bar}" on the OSD.
 
-
 *** Configuration Commands
     :PROPERTIES:
     :CUSTOM_ID: configuration-commands
@@ -11640,9 +11479,7 @@ Remember to quote string arguments in input.conf (see
   - =restore= :: Restore options set by a previous =apply-profile=
     command for this profile. Only works if the profile has
     =profile-restore= set to a relevant mode. Prints a warning if
-    nothing could be done. See
-    [[#runtime-profiles][Runtime profiles]]
-    for details.
+    nothing could be done. See [[#runtime-profiles][Runtime profiles]] for details.
 
 - =load-config-file <filename>= :: Load a configuration file, similar to
   the =--include= option. If the file was already included, its previous
@@ -11655,7 +11492,6 @@ Remember to quote string arguments in input.conf (see
   deleted config is for that file; otherwise, it is the same one as
   would be written by =quit-watch-later= or =write-watch-later-config=
   in the current circumstance.
-
 
 *** OSD Commands
     :PROPERTIES:
@@ -11687,8 +11523,7 @@ Remember to quote string arguments in input.conf (see
   and the overlay should be aspect-compensated.
 
   This has the following named arguments. The order of them is not
-  guaranteed, so you should always call them with named arguments, see
-  [[#named-arguments][Named arguments]].
+  guaranteed, so you should always call them with named arguments, see [[#named-arguments][Named arguments]].
 
   =id= is an integer between 0 and 63 identifying the overlay element.
   The ID can be used to add multiple overlay parts, update a part by
@@ -11851,7 +11686,6 @@ Remember to quote string arguments in input.conf (see
   use the =mp.create_osd_overlay()= helper instead of invoking this
   command directly.
 
-
 *** Input and Keybind Commands
     :PROPERTIES:
     :CUSTOM_ID: input-and-keybind-commands
@@ -11954,7 +11788,6 @@ Remember to quote string arguments in input.conf (see
   similar to the =--input-conf= option. If the file was already
   included, its previous bindings are not reset before it is reparsed.
 
-
 *** Execution Commands
     :PROPERTIES:
     :CUSTOM_ID: execution-commands
@@ -11964,8 +11797,7 @@ Remember to quote string arguments in input.conf (see
   Unlike in MPlayer/mplayer2 and earlier versions of mpv (0.2.x and
   older), this doesn't call the shell. Instead, the command is run
   directly, with each argument passed separately. Each argument is
-  expanded like in
-  [[#property-expansion][Property Expansion]].
+  expanded like in [[#property-expansion][Property Expansion]].
 
   This command has a variable number of arguments, and cannot be used
   with named arguments.
@@ -11993,8 +11825,8 @@ Remember to quote string arguments in input.conf (see
   Lua scripting.)
 
   This has the following named arguments. The order of them is not
-  guaranteed, so you should always call them with named arguments, see
-  [[#named-arguments][Named arguments]].
+  guaranteed, so you should always call them with named arguments,
+  see [[#named-arguments][Named arguments]].
 
   - =args= (=MPV_FORMAT_NODE_ARRAY[MPV_FORMAT_STRING]=) :: Array of
     strings with the command as first argument, and subsequent command
@@ -12123,7 +11955,6 @@ Remember to quote string arguments in input.conf (see
   on start. The (optional) argument is exactly as in the =quit= command.
   See [[#resuming-playback][RESUMING PLAYBACK]].
 
-
 *** Scripting Commands
     :PROPERTIES:
     :CUSTOM_ID: scripting-commands
@@ -12197,8 +12028,7 @@ Remember to quote string arguments in input.conf (see
   to support more input peculiarities.
 
   This is a scalable command. See the documentation of =nonscalable=
-  input command prefix in
-  [[#input-command-prefixes][Input Command Prefixes]] for details.
+  input command prefix in [[#input-command-prefixes][Input Command Prefixes]] for details.
 
 - =load-script <filename>= :: Load a script, similar to the =--script=
   option. Whether this waits for the script to finish initialization or
@@ -12207,7 +12037,6 @@ Remember to quote string arguments in input.conf (see
   On success, returns a =mpv_node= with a =client_id= field set to the
   return value of the =mpv_client_id()= API call of the newly created
   script handle.
-
 
 *** Screenshot Commands
     :PROPERTIES:
@@ -12255,8 +12084,7 @@ Remember to quote string arguments in input.conf (see
   If the file already exists, it's overwritten.
 
   Like all input command parameters, the filename is subject to property
-  expansion as described in
-  [[#property-expansion][Property Expansion]].
+  expansion as described in [[#property-expansion][Property Expansion]].
 
 - =screenshot-raw [<flags> [<format>]]= :: Return a screenshot in
   memory. This can be used only through the client API. The
@@ -12293,7 +12121,6 @@ Remember to quote string arguments in input.conf (see
   The =flags= argument is like the first argument to =screenshot= and
   supports =subtitles=, =video=, =window=.
 
-
 *** Filter Commands
     :PROPERTIES:
     :CUSTOM_ID: filter-commands
@@ -12303,9 +12130,8 @@ Remember to quote string arguments in input.conf (see
   command.
 - =vf <operation> <value>= :: Change video filter chain.
 
-  The semantics are exactly the same as with option parsing (see
-  [[#video-filters][VIDEO FILTERS]]). As
-  such the text below is a redundant and incomplete summary.
+  The semantics are exactly the same as with option parsing
+  (see [[#video-filters][VIDEO FILTERS]]). As such the text below is a redundant and incomplete summary.
 
   The first argument decides what happens:
 
@@ -12380,7 +12206,6 @@ Remember to quote string arguments in input.conf (see
 - =af-command <label> <command> <argument> [<target>]= :: Same as
   =vf-command=, but for audio filters.
 
-
 *** Miscellaneous Commands
     :PROPERTIES:
     :CUSTOM_ID: miscellaneous-commands
@@ -12427,8 +12252,7 @@ Remember to quote string arguments in input.conf (see
   much longer. If continuous dumping is used, the command will not
   finish until playback is stopped, an error happens, another
   =dump-cache= command is run, or an API like =mp.abort_async_command=
-  was called to explicitly stop the command. See
-  [[#synchronous-vs-asynchronous][Synchronous vs. Asynchronous]].
+  was called to explicitly stop the command. See [[#synchronous-vs-asynchronous][Synchronous vs. Asynchronous]].
 
   Note
 
@@ -12474,9 +12298,8 @@ Remember to quote string arguments in input.conf (see
   command depends on the VO implementation of window dragging. For
   example, on Windows and macOS only the left mouse button can begin
   window dragging, while X11 and Wayland allow other mouse buttons.
-- =context-menu= :: Show context menu on the video window. See
-  [[#context-menu][Context Menu]] section
-  for details.
+- =context-menu= :: Show context menu on the video window.
+  See [[#context-menu][Context Menu]] section for details.
 
 Undocumented commands: =ao-reload= (experimental/internal).
 
@@ -12750,15 +12573,12 @@ Multiple prefixes can be specified. They are separated by whitespace.
   their effects might manifest after completion of the command). The
   semantics of this flag might change in the future. Set it only if you
   don't rely on the effects of this command being fully realized when it
-  returns. See
-  [[#synchronous-vs-asynchronous][Synchronous vs. Asynchronous]].
+  returns. See [[#synchronous-vs-asynchronous][Synchronous vs. Asynchronous]].
 - =sync= :: Allow synchronous execution (if possible). Normally, all
   commands are synchronous by default, but some are asynchronous by
   default for compatibility with older behavior.
 
-All of the osd prefixes are still overridden by the global =--osd-level=
-settings.
-
+All of the osd prefixes are still overridden by the global =--osd-level= settings.
 ** Synchronous vs. Asynchronous
    :PROPERTIES:
    :CUSTOM_ID: synchronous-vs.-asynchronous
@@ -14063,8 +13883,7 @@ read-only.
   processed for C escape sequences before passing it to the OSD code.
   See [[#flat-command-syntax][Flat command syntax]] for details.
 
-  A list of tags can be found here:
-  [[https://aegisub.org/docs/latest/ass_tags/]]
+  A list of tags can be found here: [[https://aegisub.org/docs/latest/ass_tags/]]
 
 - =vo-configured= :: Whether the VO is configured right now. Usually
   this corresponds to whether the video window is visible. If the
@@ -14241,9 +14060,8 @@ read-only.
 
   - =user-data/mpv/console/open= :: Whether the console is open.
 
-- =menu-data= (RW) :: This property stores the raw menu definition. See
-  [[#context-menu][Context Menu]] section
-  for details.
+- =menu-data= (RW) :: This property stores the raw menu definition.
+  See [[#context-menu][Context Menu]] section for details.
 
   - =type= :: Menu item type. Can be: =separator=, =submenu=, or empty.
   - =title= :: Menu item title. Required if type is not =separator=.
@@ -14317,9 +14135,7 @@ read-only.
 - =demuxer-lavf-list= :: List of available libavformat demuxers' names.
   This can be used to check for support for a specific format or use
   with =--demuxer-lavf-format=.
-- =input-key-list= :: List of
-  [[#key-names][Key names]], same as output
-  by =--input-keylist=.
+- =input-key-list= :: List of [[#key-names][Key names]], same as output by =--input-keylist=.
 - =mpv-version= :: The mpv version/copyright string. Depending on how
   the binary was built, it might contain either a release version, or
   just a git hash.
@@ -14524,12 +14340,9 @@ Example for input.conf
   current file when pressing the =i= key
 
 Whether property expansion is enabled by default depends on which API is
-used (see [[#flat-command-syntax][Flat command syntax]],
-[[#commands-specified-as-arrays][Commands specified as arrays]] and
-[[#named-arguments][Named arguments]]), but
-it can always be enabled with the =expand-properties= prefix or disabled
-with the =raw= prefix, as described in
-[[#input-command-prefixes][Input Command Prefixes]].
+used (see [[#flat-command-syntax][Flat command syntax]], [[#commands-specified-as-arrays][Commands specified as arrays]] and [[#named-arguments][Named arguments]]),
+but it can always be enabled with the =expand-properties= prefix or disabled
+with the =raw= prefix, as described in [[#input-command-prefixes][Input Command Prefixes]].
 
 The following expansions are supported:
 
@@ -14623,7 +14436,6 @@ can be disabled entirely using the =--osc=no= option.
 By default, the OSC will show up whenever the mouse is moved inside the
 player window and will hide if the mouse is not moved outside the OSC
 for 0.5 seconds or if the mouse leaves the window.
-
 
 *** The Interface
     :PROPERTIES:
@@ -14723,7 +14535,6 @@ mouse actions on some interface elements, and the default behaviors of
 several elements were changed. If you miss some older behaviors, look at
 =etc/restore-osc-bindings.conf= in the mpv git repository.
 
-
 *** Key Bindings
     :PROPERTIES:
     :CUSTOM_ID: key-bindings
@@ -14731,11 +14542,9 @@ several elements were changed. If you miss some older behaviors, look at
 
 These key bindings are active by default if nothing else is already
 bound to these keys. In case of collision, the function needs to be
-bound to a different key. See the
-[[#script-commands][Script Commands]]
-section.
+bound to a different key. See the [[#script-commands][Script Commands]] section.
 
-| del   | Cycles visibility between never / auto (mouse-move) / always   |
+| del | Cycles visibility between never / auto (mouse-move) / always |
 
 ** Configuration
    :PROPERTIES:
@@ -14745,9 +14554,7 @@ section.
 This script can be customized through a config file
 =script-opts/osc.conf= placed in mpv's user directory and through the
 =--script-opts= command-line option. The configuration syntax is
-described in
-[[#mp-options-functions][mp.options functions]].
-
+described in [[#mp-options-functions][mp.options functions]].
 
 *** Command-line Syntax
     :PROPERTIES:
@@ -14762,7 +14569,6 @@ Example:
 #+BEGIN_EXAMPLE
     --script-opts=osc-optionA=value1,osc-optionB=value2
 #+END_EXAMPLE
-
 
 *** Configurable Options
     :PROPERTIES:
@@ -15153,7 +14959,6 @@ are clicked. =mbtn_mid= commands are also triggered with
 
 =fullscreen_mbtn_right_command="cycle window-maximized"=
 
-
 *** Custom Buttons
     :PROPERTIES:
     :CUSTOM_ID: custom-buttons
@@ -15175,7 +14980,6 @@ custom_button_3_content=⏱ custom_button_3_mbtn_left_command=add speed 1
 custom_button_3_mbtn_right_command=set speed 1
 custom_button_3_wheel_up_command=add speed 0.25
 custom_button_3_wheel_down_command=add speed -0.25
-
 
 *** Script Commands
     :PROPERTIES:
@@ -15217,7 +15021,6 @@ This builtin script displays information and statistics for the
 currently played file. It is enabled by default if mpv was compiled with
 Lua support. It can be disabled entirely using the
 =--load-stats-overlay=no= option.
-
 
 ** Usage
    :PROPERTIES:
@@ -15262,10 +15065,7 @@ On page 4, these key bindings are also active:
 
 This script can be customized through a config file
 =script-opts/stats.conf= placed in mpv's user directory and through the
-=--script-opts= command-line option. The configuration syntax is
-described in
-[[#mp-options-functions][mp.options functions]].
-
+=--script-opts= command-line option. The configuration syntax is described in [[#mp-options-functions][mp.options functions]].
 
 *** Configurable Options
     :PROPERTIES:
@@ -15406,7 +15206,6 @@ described in
 Note: colors are given as hexadecimal values and use ASS tag order:
 BBGGRR (blue green red).
 
-
 *** Different key bindings
     :PROPERTIES:
     :CUSTOM_ID: different-key-bindings
@@ -15425,7 +15224,6 @@ And to display a certain page directly:
     i script-binding stats/display-page-1
     h script-binding stats/display-page-4-toggle
 #+END_EXAMPLE
-
 
 *** Active key bindings page
     :PROPERTIES:
@@ -15448,7 +15246,6 @@ adding =-= before =yes=, i.e. =--script-opt=stats-bindlist=-yes=.
 
 Like with =--input-test=, the list includes bindings from =input.conf=
 and from user scripts. Use =--no-config= to list only built-in bindings.
-
 
 *** Internal stuff page
     :PROPERTIES:
@@ -15506,7 +15303,6 @@ the video window and the terminal. It can be disabled entirely using the
 Console can either process free-form text or select from a predefined
 list of items.
 
-
 ** Free-form text mode keybindings
    :PROPERTIES:
    :CUSTOM_ID: free-form-text-mode-keybindings
@@ -15540,9 +15336,7 @@ list of items.
 - DOWN and Ctrl+n :: Move forward in the command history.
 - PGUP :: Go to the first command in the history.
 - PGDN :: Stop navigating the command history.
-- Ctrl+r :: Search the command history. See
-  [[#select][SELECT]] for the key bindings
-  in this mode.
+- Ctrl+r :: Search the command history. See [[#select][SELECT]] for the key bindings in this mode.
 - INSERT :: Toggle insert mode.
 - Ctrl+v :: Paste text (uses the clipboard on X11 and Wayland).
 - Shift+INSERT :: Paste text (uses the primary selection on X11 and
@@ -15572,9 +15366,7 @@ list of items.
 This script can be customized through a config file
 =script-opts/console.conf= placed in mpv's user directory and through
 the =--script-opts= command-line option. The configuration syntax is
-described in
-[[#mp-options-functions][mp.options functions]].
-
+described in [[#mp-options-functions][mp.options functions]].
 
 *** Configurable Options
     :PROPERTIES:
@@ -15665,7 +15457,6 @@ described in
 This script allows running and completing input commands in the console
 interactively, and also adds mpv's log to the console's log.
 
-
 ** Keybindings
    :PROPERTIES:
    :CUSTOM_ID: keybindings
@@ -15704,10 +15495,7 @@ interactively, and also adds mpv's log to the console's log.
 This script can be customized through a config file
 =script-opts/commands.conf= placed in mpv's user directory and through
 the =--script-opts= command-line option. The configuration syntax is
-described in
-[[#mp-options-functions][mp.options
-functions]].
-
+described in [[#mp-options-functions][mp.options functions]].
 
 *** Configurable Options
     :PROPERTIES:
@@ -15720,8 +15508,7 @@ functions]].
 
 - =history_path= :: Default: =~~state/command_history.txt=
 
-  The file path for =persist_history= (see
-  [[#paths][PATHS]]).
+  The file path for =persist_history= (see [[#paths][PATHS]]).
 
 * SELECT
   :PROPERTIES:
@@ -15734,15 +15521,13 @@ providing script bindings that gather and format the data to be selected
 in the console and do operations on the selected item. It can be
 disabled using the =--load-select=no= option.
 
-
 ** Key bindings
    :PROPERTIES:
    :CUSTOM_ID: key-bindings-1
    :END:
 
 When using =mp.input.select=, typing printable characters does a fuzzy
-search of the presented items, and key bindings listed in
-[[#console][CONSOLE]] are extended with the
+search of the presented items, and key bindings listed in [[#console][CONSOLE]] are extended with the
 following:
 
 - ENTER, Ctrl+j and Ctrl+m :: Confirm the selection of the highlighted
@@ -15764,8 +15549,7 @@ following:
    :END:
 
 By default select.lua's script bindings are bound to key sequences
-starting with =g= listed in
-[[#keyboard-control][Keyboard Control]].
+starting with =g= listed in [[#keyboard-control][Keyboard Control]].
 The names of the script bindings listed below can be used to bind them
 to different keys.
 
@@ -15834,9 +15618,7 @@ Available script bindings are:
 This script can be customized through a config file
 =script-opts/select.conf= placed in mpv's user directory and through the
 =--script-opts= command-line option. The configuration syntax is
-described in
-[[#mp-options-functions][mp.options functions]].
-
+described in [[#mp-options-functions][mp.options functions]].
 
 *** Configurable options
     :PROPERTIES:
@@ -15859,7 +15641,6 @@ described in
 
 This script provides script bindings to pan videos and images. It can be
 disabled using the =--load-positioning=no= option.
-
 
 ** Script bindings
    :PROPERTIES:
@@ -15895,9 +15676,7 @@ disabled using the =--load-positioning=no= option.
 This script can be customized through a config file
 =script-opts/positioning.conf= placed in mpv's user directory and
 through the =--script-opts= command-line option. The configuration
-syntax is described in
-[[#mp-options-functions][mp.options functions]].
-
+syntax is described in [[#mp-options-functions][mp.options functions]].
 
 *** Configurable Options
     :PROPERTIES:
@@ -15920,8 +15699,7 @@ syntax is described in
   :CUSTOM_ID: lua-scripting
   :END:
 
-mpv can load Lua scripts. (See
-[[#script-location][Script location]].)
+mpv can load Lua scripts. (See [[#script-location][Script location]].)
 
 mpv provides the built-in module =mp=, which contains functions to send
 commands to the mpv core and to retrieve information about playback
@@ -15929,7 +15707,6 @@ state, user settings, file information, and so on.
 
 These scripts can be used to control mpv in a similar way to slave mode.
 Technically, the Lua code uses the client API internally.
-
 
 ** Example
    :PROPERTIES:
@@ -16054,12 +15831,11 @@ The =mp= module is preloaded, although it can be loaded manually with
 =require 'mp'=. It provides the core client API.
 
 - =mp.command(string)= :: Run the given command. This is similar to the
-  commands used in input.conf. See
-  [[#list-of-input-commands][List of Input Commands]].
+  commands used in input.conf. See [[#list-of-input-commands][List of Input Commands]].
 
   By default, this will show something on the OSD (depending on the
-  command), as if it was used in =input.conf=. See
-  [[#input-command-prefixes][Input Command Prefixes]] how to influence OSD usage per command.
+  command), as if it was used in =input.conf=.
+  See [[#input-command-prefixes][Input Command Prefixes]] how to influence OSD usage per command.
 
   Returns =true= on success, or =nil, error= on error.
 
@@ -16136,18 +15912,15 @@ The =mp= module is preloaded, although it can be loaded manually with
   long it takes depends on the command and the situation. The abort call
   itself is asynchronous. Does not return anything.
 - =mp.del_property(name)= :: Delete the given property. See
-  =mp.get_property= and
-  [[#properties][Properties]] for more
-  information about properties. Most properties cannot be deleted.
+  =mp.get_property= and [[#properties][Properties]] for more information about properties.
+  Most properties cannot be deleted.
 
   Returns true on success, or =nil, error= on error.
 
 - =mp.get_property(name [,def])= :: Return the value of the given
   property as string. These are the same properties as used in
-  input.conf. See
-  [[#properties][Properties]] for a list of
-  properties. The returned string is formatted similar to =${=name}=
-  (see [[#property-expansion][Property Expansion]]).
+  input.conf. See [[#properties][Properties]] for a list of properties. The returned string
+  is formatted similar to =${=name}= (see [[#property-expansion][Property Expansion]]).
 
   Returns the string on success, or =def, error= on error. =def= is the
   second parameter provided to the function, and is nil if it's missing.
@@ -16184,9 +15957,8 @@ The =mp= module is preloaded, although it can be loaded manually with
   might be a possible, valid value too in some corner cases.
 
 - =mp.set_property(name, value)= :: Set the given property to the given
-  string value. See =mp.get_property= and
-  [[#properties][Properties]] for more
-  information about properties.
+  string value. See =mp.get_property= and [[#properties][Properties]] for more information
+  about properties.
 
   Returns true on success, or =nil, error= on error.
 
@@ -16350,9 +16122,7 @@ The =mp= module is preloaded, although it can be loaded manually with
 
   Returns true if such an event exists, false otherwise.
 
-  See [[#events][Events]] and
-  [[#list-of-events][List of events]] for
-  details.
+  See [[#events][Events]] and [[#list-of-events][List of events]] for details.
 
 - =mp.unregister_event(fn)= :: Undo =mp.register_event(..., fn)=. This
   removes all event handlers that are equal to the =fn= parameter. This
@@ -16434,8 +16204,7 @@ The =mp= module is preloaded, although it can be loaded manually with
       before the timer callback function fn is run).
 
   Note that these are methods, and you have to call them using =:=
-  instead of =.= (Refer to
-  [[https://www.lua.org/manual/5.2/manual.html#3.4.9]] .)
+  instead of =.= (Refer to [[https://www.lua.org/manual/5.2/manual.html#3.4.9]] .)
 
   Example:
 
@@ -16466,9 +16235,8 @@ The =mp= module is preloaded, although it can be loaded manually with
   The script =/path/to/foo-script.lua= becomes =foo_script=.
 
 - =mp.get_script_directory()= :: Return the directory if this is a
-  script packaged as directory (see
-  [[#script-location][Script location]] for
-  a description). Return nothing if this is a single file script.
+  script packaged as directory (see [[#script-location][Script location]] for a description).
+  Return nothing if this is a single file script.
 - =mp.osd_message(text [,duration])= :: Show an OSD message on the
   screen. =duration= is in seconds, and is optional (uses
   =--osd-duration= by default).
@@ -16930,8 +16698,7 @@ Example:
     mp.register_event("file-loaded", my_fn)
 #+END_EXAMPLE
 
-For the existing event types, see
-[[#list-of-events][List of events]].
+For the existing event types, see [[#list-of-events][List of events]].
 
 ** Extras
    :PROPERTIES:
@@ -16963,10 +16730,9 @@ to guarantee a stable interface.
       =defer()= was called.
   #+END_QUOTE
 
-  See [[#hooks][Hooks]] for currently
-  existing hooks and what they do - only the hook list is interesting;
-  handling hook execution is done by the Lua script function
-  automatically.
+  See [[#hooks][Hooks]] for currently existing hooks and what they do - only the hook
+  list is interesting; handling hook execution is done by the Lua script
+  function automatically.
 
 * JAVASCRIPT
   :PROPERTIES:
@@ -17345,8 +17111,7 @@ like =<script-dir>/modules= for scripts which load from a directory).
 
 The custom-init file is ignored if mpv is invoked with =--no-config=.
 
-Before mpv 0.34, the file name was =.init.js= (with dot) at the same
-dir.
+Before mpv 0.34, the file name was =.init.js= (with dot) at the same dir.
 
 ** The event loop
    :PROPERTIES:
@@ -17649,17 +17414,16 @@ This is described in the C API =mpv_command_node()= documentation (the
 readable, while some obscure commands basically require using named
 arguments.
 
-Currently, only "proper" commands (as listed by
-[[#list-of-input-commands][List of Input Commands]]) support named arguments.
+Currently, only "proper" commands (as listed by [[#list-of-input-commands][List of Input Commands]])
+support named arguments.
 
 ** Commands
    :PROPERTIES:
    :CUSTOM_ID: commands-2
    :END:
 
-In addition to the commands described in
-[[#list-of-input-commands][List of Input Commands]], a few extra commands can also be used as part of the
-protocol:
+In addition to the commands described in [[#list-of-input-commands][List of Input Commands]], a few
+extra commands can also be used as part of the protocol:
 
 - =client_name= :: Return the name of the client as string. This is the
   string =ipc-N= with N being an integer number.
@@ -17686,9 +17450,8 @@ protocol:
       { "data": "50.000000", "error": "success" }
   #+END_EXAMPLE
 
-- =set_property= :: Set the given property to the given value. See
-  [[#properties][Properties]] for more
-  information about properties.
+- =set_property= :: Set the given property to the given value.
+  See [[#properties][Properties]] for more information about properties.
 
   Example:
 
@@ -17819,9 +17582,8 @@ You can create an anonymous IPC connection without having to set
 backend that starts processes.
 
 You can put =.run= file extension in the mpv scripts directory in its
-config directory (see the [[#files][FILES]]
-section for details), or load them through other means (see
-[[#script-location][Script location]]).
+config directory (see the [[#files][FILES]] section for details), or load them through
+other means (see [[#script-location][Script location]]).
 These scripts are simply executed with the OS native mechanism (as if
 you ran them in the shell). They must have a proper shebang and have the
 executable bit set.
@@ -17851,13 +17613,10 @@ There is no real changelog, but you can look at the following things:
 
 - The git log, which is the "real" changelog
 
-- The file
-  [[https://github.com/mpv-player/mpv/blob/master/DOCS/interface-changes.rst]]
-  documents changes to the command and user interface, such as options
-  and properties.
+- The file [[https://github.com/mpv-player/mpv/blob/master/DOCS/interface-changes.rst]]
+  documents changes to the command and user interface, such as options and properties.
 
-- C API changes are listed in
-  [[https://github.com/mpv-player/mpv/blob/master/DOCS/client-api-changes.rst]]
+- C API changes are listed in [[https://github.com/mpv-player/mpv/blob/master/DOCS/client-api-changes.rst]]
 
 - The file =mplayer-changes.rst= in the =DOCS= sub directory on the git
   repository, which used to be in place of this section. It documents
@@ -17957,9 +17716,7 @@ symbols dynamically, before calling =mpv_open_cplugin()=.
    :CUSTOM_ID: examples
    :END:
 
-See:
-
-- [[https://github.com/mpv-player/mpv-examples/tree/master/cplugins]]
+See: [[https://github.com/mpv-player/mpv-examples/tree/master/cplugins]]
 
 * ENVIRONMENT VARIABLES
   :PROPERTIES:
@@ -18084,9 +17841,7 @@ This applies for all optical disc playback (CDDA, DVD, and BD).
   :END:
 
 Note that this section assumes Linux/BSD. On other platforms the paths
-may be different. For Windows-specifics, see
-[[#files-on-windows][FILES ON WINDOWS]]
-section.
+may be different. For Windows-specifics, see [[#files-on-windows][FILES ON WINDOWS]] section.
 
 All configuration files should be encoded in UTF-8.
 
@@ -18124,10 +17879,8 @@ All configuration files should be encoded in UTF-8.
   fully migrate to the standard directory and a warning will be shown in
   this situation.
 
-- =~/.config/mpv/mpv.conf= :: mpv user settings (see
-  [[#configuration-files][CONFIGURATION FILES]] section)
-- =~/.config/mpv/input.conf= :: key bindings (see
-  [[#input-conf][INPUT.CONF]] section)
+- =~/.config/mpv/mpv.conf= :: mpv user settings (see [[#configuration-files][CONFIGURATION FILES]] section)
+- =~/.config/mpv/input.conf= :: key bindings (see [[#input-conf][INPUT.CONF]] section)
 - =~/.config/mpv/fonts.conf= :: Fontconfig fonts.conf that is customized
   for mpv. You should include system fonts.conf in this file or mpv
   would not know about fonts that you already have in the system.
@@ -18135,17 +17888,15 @@ All configuration files should be encoded in UTF-8.
   Only available when libass is built with fontconfig.
 
 - =~/.config/mpv/subfont.ttf= :: fallback subtitle font
-- =~/.config/mpv/fonts/= :: Default location for =--sub-fonts-dir= (see
-  [[#subtitles][Subtitles]]) and
-  =--osd-fonts-dir= (see [[#osd][OSD]]).
+- =~/.config/mpv/fonts/= :: Default location for =--sub-fonts-dir=
+  (see [[#subtitles][Subtitles]]) and =--osd-fonts-dir= (see [[#osd][OSD]]).
 - =~/.config/mpv/scripts/= :: All files in this directory are loaded as
   if they were passed to the =--script= option. They are loaded in
   alphabetical order.
 
   The =--load-scripts=no= option disables loading these files.
 
-  See [[#script-location][Script location]]
-  for details.
+  See [[#script-location][Script location]] for details.
 
 - =~/.local/state/mpv/watch_later/= :: Contains temporary config files
   needed for resuming playback of files with the watch later feature.
@@ -18167,8 +17918,7 @@ All configuration files should be encoded in UTF-8.
   the resume config file.
 
 - =~/.config/mpv/script-opts/osc.conf= :: This is loaded by the OSC
-  script. See the
-  [[#on-screen-controller][ON SCREEN CONTROLLER]] docs for details.
+  script. See the [[#on-screen-controller][ON SCREEN CONTROLLER]] docs for details.
 
   Other files in this directory are specific to the corresponding
   scripts as well, and the mpv core doesn't touch them.
@@ -18191,13 +17941,12 @@ for example
 You can find the exact path by running =echo %APPDATA%\mpv\mpv.conf= in
 cmd.exe.
 
-Other config files (such as =input.conf=) are in the same directory. See
-the [[#files][FILES]] section above.
+Other config files (such as =input.conf=) are in the same directory.
+See the [[#files][FILES]] section above.
 
 The cache directory is located at =%LOCALAPPDATA%/mpv/cache=.
 
-The watch_later directory is located at
-=%LOCALAPPDATA%/mpv/watch_later=.
+The watch_later directory is located at =%LOCALAPPDATA%/mpv/watch_later=.
 
 The environment variable =$MPV_HOME= completely overrides these, like on
 UNIX.
